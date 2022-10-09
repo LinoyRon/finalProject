@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable-v24/chatprofile_background.xml" value="0.1015" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1015" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable-v24/placeholder_circle.xml" value="0.10666666666666667" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/ic_add.xml" value="0.1015" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1015" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/ic_calender.xml" value="0.1015" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/ic_chat.xml" value="0.1015" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/ic_email.xml" value="0.1015" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1015" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/ic_lock.xml" value="0.1015" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/ic_profile.xml" value="0.1015" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/ic_room.xml" value="0.1015" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/ic_settings.xml" value="0.111" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/ic_wave.xml" value="0.1015" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/ic_wave__4_.xml" value="0.1015" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/round_bg.xml" value="0.1015" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/round_border.xml" value="0.1015" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/search_background.xml" value="0.1015" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/activity_main.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/chat_cell.xml" value="0.14743589743589744" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/conversation_cell.xml" value="0.1796875" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/fragment_addmeeting.xml" value="0.1796875" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/fragment_calender.xml" value="0.1796875" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/fragment_chat.xml" value="0.1796875" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/fragment_login.xml" value="0.1796875" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/fragment_profile.xml" value="0.16302083333333334" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/fragment_registration.xml" value="0.14427083333333332" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/fragment_rooms.xml" value="0.1796875" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/fragment_settings.xml" value="0.1796875" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/lauout_conversations.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/loginpage.xml" value="0.1796875" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1140625" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/menu/botton_nav_menu.xml" value="0.1796875" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
