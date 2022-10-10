@@ -9,32 +9,32 @@ import java.util.List;
 public class ChatManager {
 
     private static ChatManager mChatManager = new ChatManager();
-    private ConversationAdapter conversationAdapter;
-    private List<User> m_ChattingUsers;
+    private ChatAdapter mChatAdapter;
+    private List<User> mChattingHistory;
 
     public static ChatManager getInstance(){ return mChatManager;}
 
     public ChatManager() {
         initListTemp();
-        conversationAdapter = new ConversationAdapter(m_ChattingUsers);
+        mChatAdapter = new ChatAdapter(mChattingHistory);
     }
 
-    public ConversationAdapter getConversationAdapter() {
-        return conversationAdapter;
+    public ChatAdapter getConversationAdapter() {
+        return mChatAdapter;
     }
 
     private void initListTemp(){
-        m_ChattingUsers=new ArrayList<User>();
+        mChattingHistory=new ArrayList<>();
 
-        m_ChattingUsers.add(new User("linoy@gamil.com", "12345678"));
-        m_ChattingUsers.add(new User("linoy@gamil.com", "12345678"));
-        m_ChattingUsers.add(new User("linoy@gamil.com", "12345678"));
-        m_ChattingUsers.add(new User("linoy@gamil.com", "12345678"));
-        m_ChattingUsers.add(new User("linoy@gamil.com", "12345678"));
-        m_ChattingUsers.add(new User("linoy@gamil.com", "12345678"));
-        m_ChattingUsers.add(new User("linoy@gamil.com", "12345678"));
-        m_ChattingUsers.add(new User("linoy@gamil.com", "12345678"));
-        m_ChattingUsers.add(new User("linoy@gamil.com", "12345678"));
-        m_ChattingUsers.add(new User("linoy@gamil.com", "12345678"));
+        mChattingHistory.add(new User("linoy@gamil.com", "12345678"));
+        mChattingHistory.add(new User("linoy@gamil.com", "12345678"));
+        mChattingHistory.add(new User("linoy@gamil.com", "12345678"));
+        mChattingHistory.add(new User("linoy@gamil.com", "12345678"));
+        mChattingHistory.add(new User("linoy@gamil.com", "12345678"));
+        mChattingHistory.add(new User("linoy@gamil.com", "12345678"));
+        mChattingHistory.add(new User("linoy@gamil.com", "12345678"));
+        mChattingHistory.add(new User("linoy@gamil.com", "12345678"));
+        mChattingHistory.add(new User("linoy@gamil.com", "12345678"));
+        mChattingHistory.add(new User("linoy@gamil.com", "12345678"));
     }
 }

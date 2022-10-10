@@ -21,11 +21,14 @@ import java.util.List;
 
 public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapter.ConversationViewHolder> {
 
-    private List<User> m_ChattingUsers;
+    private List<Conversation> mChattingUsers;
+    Conversation mCurrentConversation;
+    ConversationAdapterListener listener;
     Context m_Context;
 
-    public ConversationAdapter(List<User> m_ChattingUsers) {
-        this.m_ChattingUsers = m_ChattingUsers;
+    public ConversationAdapter(ConversationAdapterListener iListener,List<Conversation> iChattingUsers) {
+        this.mChattingUsers = iChattingUsers;
+        this.listener = iListener;
     }
 
     public interface ConversationAdapterListener {
@@ -46,24 +49,21 @@ public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapte
     @Override
     public void onBindViewHolder(@NonNull ConversationViewHolder holder, int position) {
 
-        User currentUser = m_ChattingUsers.get(position);
+        mCurrentConversation = mChattingUsers.get(position);
 
         /*Glide.with(m_Context).load(currentUser.getPhotoPath()).into(holder.userProfilePic);
         holder.userName.setText(currentUser.getFirstName()+' '+currentUser.getLastName());
 
-        Conversation conversation = getItem(position);
         Glide.with(holder.itemView.getContext())
                 .load(conversation.getOppositeUser().getPhotoPath())
                 .circleCrop()
                 .into(holder.thumbnail);
         holder.fullName.setText(conversation.getOppositeUser().userFullName());
-        holder.itemView.setOnClickListener(v-> {
-            listener.onConversationClick(conversation);
-        });*/
+        */
     }
 
     @Override
-    public int getItemCount() { return m_ChattingUsers.size();  }
+    public int getItemCount() { return mChattingUsers.size();  }
 
     protected class ConversationViewHolder extends RecyclerView.ViewHolder{
 
@@ -76,11 +76,12 @@ public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapte
             userProfilePic=itemView.findViewById(R.id.userProfileImageInChat);
             userName=itemView.findViewById(R.id.userNameInChat);
 
+            //userName.setText(mCurrentConversation.getChatPartner().getFirstName()+' '+mCurrentConversation.getChatPartner().getLastName());
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    //openChatActivity(conversation.getConversationId(), conversation.getChatPartner() );
-                    Navigation.findNavController(view).navigate(R.id.action_conversationFragment_to_chatFragment);
+                    listener.onConversationClick(mCurrentConversation);
                 }
             });
         }

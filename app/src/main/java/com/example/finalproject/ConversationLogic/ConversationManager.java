@@ -1,5 +1,6 @@
 package com.example.finalproject.ConversationLogic;
 
+import com.example.finalproject.Instance.Conversation;
 import com.example.finalproject.Instance.User;
 
 import java.util.ArrayList;
@@ -7,15 +8,12 @@ import java.util.List;
 
 public class ConversationManager {
 
-    private static ConversationManager mChatManager = new ConversationManager();
     private ConversationAdapter conversationAdapter;
-    private List<User> m_ChattingUsers;
+    private List<Conversation> mChattingUsers;
 
-    public static ConversationManager getInstance(){ return mChatManager;}
-
-    public ConversationManager() {
+    public ConversationManager(ConversationAdapter.ConversationAdapterListener iListener) {
         initListTemp();
-        conversationAdapter = new ConversationAdapter(m_ChattingUsers);
+        conversationAdapter = new ConversationAdapter(iListener, mChattingUsers);
     }
 
     public ConversationAdapter getConversationAdapter() {
@@ -23,17 +21,18 @@ public class ConversationManager {
     }
 
     private void initListTemp(){
-        m_ChattingUsers=new ArrayList<User>();
+        mChattingUsers=new ArrayList<>();
 
-        m_ChattingUsers.add(new User("linoy@gamil.com", "12345678"));
-        m_ChattingUsers.add(new User("linoy@gamil.com", "12345678"));
-        m_ChattingUsers.add(new User("linoy@gamil.com", "12345678"));
-        m_ChattingUsers.add(new User("linoy@gamil.com", "12345678"));
-        m_ChattingUsers.add(new User("linoy@gamil.com", "12345678"));
-        m_ChattingUsers.add(new User("linoy@gamil.com", "12345678"));
-        m_ChattingUsers.add(new User("linoy@gamil.com", "12345678"));
-        m_ChattingUsers.add(new User("linoy@gamil.com", "12345678"));
-        m_ChattingUsers.add(new User("linoy@gamil.com", "12345678"));
-        m_ChattingUsers.add(new User("linoy@gamil.com", "12345678"));
+        mChattingUsers.add(new Conversation("123",new User("linoy@gamil.com", "12345678")));
+        mChattingUsers.add(new Conversation("123",new User("linoy@gamil.com", "12345678")));
+        mChattingUsers.add(new Conversation("123",new User("linoy@gamil.com", "12345678")));
+        mChattingUsers.add(new Conversation("123",new User("linoy@gamil.com", "12345678")));
+        mChattingUsers.add(new Conversation("123",new User("linoy@gamil.com", "12345678")));
+        mChattingUsers.add(new Conversation("123",new User("linoy@gamil.com", "12345678")));
+        mChattingUsers.add(new Conversation("123",new User("linoy@gamil.com", "12345678")));
+        mChattingUsers.add(new Conversation("123",new User("linoy@gamil.com", "12345678")));
+        mChattingUsers.add(new Conversation("123",new User("linoy@gamil.com", "12345678")));
+        mChattingUsers.add(new Conversation("123",new User("linoy@gamil.com", "12345678")));
+        mChattingUsers.add(new Conversation("123",new User("linoy@gamil.com", "12345678")));
     }
 }

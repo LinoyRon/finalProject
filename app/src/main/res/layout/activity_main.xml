@@ -30,13 +30,12 @@
     </FrameLayout>
 
     <fragment
-            android:name="androidx.navigation.fragment.NavHostFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/fragmentContainer"
-            app:layout_constraintTop_toBottomOf="@+id/mainActTopHeader"
-            app:layout_constraintBottom_toTopOf="@+id/navBarLayout"
-            app:navGraph="@navigation/navigation_main" />
+        android:id="@+id/fragmentContainer"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainActTopHeader"
+        app:navGraph="@navigation/navigation_main"/>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/navBarLayout"
@@ -68,7 +67,5 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_add"
             app:layout_anchor="@id/bottomAppBar"/>
-
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

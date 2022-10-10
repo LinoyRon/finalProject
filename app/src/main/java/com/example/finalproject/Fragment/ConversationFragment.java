@@ -14,11 +14,14 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.finalproject.ChatLogic.ChatManager;
+import com.example.finalproject.Activities.ChatActivity;
 import com.example.finalproject.ConversationLogic.ConversationAdapter;
+import com.example.finalproject.ConversationLogic.ConversationManager;
 import com.example.finalproject.Instance.Conversation;
 import com.example.finalproject.Instance.User;
 import com.example.finalproject.R;
+
+import java.io.Serializable;
 
 public class ConversationFragment extends Fragment {
 
@@ -47,22 +50,22 @@ public class ConversationFragment extends Fragment {
         myChatRecyclerView = myView.findViewById(R.id.chatRecyclerview);
         myChatRecyclerView.setHasFixedSize(true);
         myChatRecyclerView.setLayoutManager(new LinearLayoutManager(myView.getContext()));
-        myChatRecyclerView.setAdapter(ChatManager.getInstance().getConversationAdapter());
+        myChatRecyclerView.setAdapter(new ConversationManager(getConversationAdapterListener()).getConversationAdapter());
     }
 
     private ConversationAdapter.ConversationAdapterListener getConversationAdapterListener() {
         return new ConversationAdapter.ConversationAdapterListener() {
             @Override
-            public void onConversationClick(Conversation conversation) {
-                openChatActivity(conversation.getConversationId(), conversation.getOppositeUser() );
+            public void onConversationClick(Conversation iConversation) {
+                openChatActivity(iConversation.getConversationId(), iConversation.getChatPartner());
             }
         };
     }
 
     private void openChatActivity(String iChatId, User iUser) {
-        Intent intent = new Intent(getActivity(), ChatFragment.class);
+        Intent intent = new Intent(getActivity(), ChatActivity.class);
         intent.putExtra("CONVERSATION_ID", iChatId);
-        intent.putExtra("USER", (Parcelable) iUser);
+        intent.putExtra("USER", iUser);
         startActivity(intent);
     }
 }

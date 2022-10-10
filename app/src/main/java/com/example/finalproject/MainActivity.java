@@ -2,24 +2,13 @@ package com.example.finalproject;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.NavHostController;
-import androidx.navigation.NavOptions;
 import androidx.navigation.Navigation;
-import androidx.navigation.fragment.NavHostFragment;
 
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.finalproject.Fragment.CalenderFragment;
-import com.example.finalproject.Fragment.ChatFragment;
-import com.example.finalproject.Fragment.ConversationFragment;
-import com.example.finalproject.Fragment.LoginFragment;
-import com.example.finalproject.Fragment.ProfileFragment;
-import com.example.finalproject.Fragment.RegistrationFragment;
-import com.example.finalproject.Fragment.RoomsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -65,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                             Navigation.findNavController(MainActivity.this,R.id.fragmentContainer).navigate(R.id.conversationFragment);
                             break;
                         case R.id.mi_room:
-                            Navigation.findNavController(MainActivity.this,R.id.fragmentContainer).navigate(R.id.chatFragment);
+                            Navigation.findNavController(MainActivity.this,R.id.fragmentContainer).navigate(R.id.roomsFragment);
                             break;
                         default:
                             break;

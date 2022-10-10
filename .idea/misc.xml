@@ -9,6 +9,7 @@
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/background_messageleft.xml" value="0.106" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/background_messageright.xml" value="0.106" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/ic_add.xml" value="0.1015" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/ic_back.xml" value="0.105" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1015" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/ic_calender.xml" value="0.1015" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/ic_chat.xml" value="0.1015" />
@@ -24,6 +25,7 @@
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/round_bg.xml" value="0.1015" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/round_border.xml" value="0.1015" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/search_background.xml" value="0.1015" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/activity_chat.xml" value="0.16041666666666668" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/activity_main.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/chat_cell.xml" value="0.14743589743589744" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/conversation_cell.xml" value="0.1796875" />

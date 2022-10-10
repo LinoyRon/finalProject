@@ -24,11 +24,4 @@
         android:id="@+id/chatRecyclerview"
         android:layout_above="@+id/conversationViewHolder">
     </androidx.recyclerview.widget.RecyclerView>
-
-    <View
-        android:layout_width="match_parent"
-        android:id="@+id/conversationViewHolder"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"/>
-
 </LinearLayout>
