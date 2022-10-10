@@ -1,20 +1,19 @@
-package com.example.finalproject.ChatLogic;
+package com.example.finalproject.ConversationLogic;
 
-import com.example.finalproject.ConversationLogic.ConversationAdapter;
 import com.example.finalproject.Instance.User;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ChatManager {
+public class ConversationManager {
 
-    private static ChatManager mChatManager = new ChatManager();
+    private static ConversationManager mChatManager = new ConversationManager();
     private ConversationAdapter conversationAdapter;
     private List<User> m_ChattingUsers;
 
-    public static ChatManager getInstance(){ return mChatManager;}
+    public static ConversationManager getInstance(){ return mChatManager;}
 
-    public ChatManager() {
+    public ConversationManager() {
         initListTemp();
         conversationAdapter = new ConversationAdapter(m_ChattingUsers);
     }

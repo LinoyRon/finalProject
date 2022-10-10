@@ -38,7 +38,7 @@ public class ProfileFragment extends Fragment {
         userImageView = view.findViewById(R.id.userImageView);
 
         if(RepositoryManager.GetCurrentUser()!=null){
-            fullNameTv.setText(RepositoryManager.GetCurrentUser().getDisplayName());
+            fullNameTv.setText(RepositoryManager.GetCurrentUser().getUid());
         }
     }
 

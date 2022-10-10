@@ -17,22 +17,26 @@
             android:id="@+id/mainActTopHeaderText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_gravity="center_horizontal|center_vertical"
             android:paddingBottom="10dp"
             android:letterSpacing="0.1"
             android:text="courses" />
+
+        <Toolbar
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_settings"
+            android:layout_gravity="center_vertical|end" />
     </FrameLayout>
 
-    <FrameLayout
-        android:id="@+id/fragmentContainer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainActTopHeader"
-        app:layout_constraintBottom_toBottomOf="@+id/navBarLayout">
-
-
-
-    </FrameLayout>
+    <fragment
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/fragmentContainer"
+            app:layout_constraintTop_toBottomOf="@+id/mainActTopHeader"
+            app:layout_constraintBottom_toTopOf="@+id/navBarLayout"
+            app:navGraph="@navigation/navigation_main" />
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/navBarLayout"

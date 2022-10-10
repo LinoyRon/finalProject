@@ -18,6 +18,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.finalproject.Instance.User;
 import com.example.finalproject.R;
+import com.example.finalproject.Repository.RepositoryManager;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -29,8 +30,7 @@ public class RegistrationFragment extends Fragment{
     EditText userFirstNameEt, userLastNameEt, userEmailEt, userPasswordEt;
     CheckBox roleCheckBox;
     Button registerBtn;
-
-    View context;
+    User addingUser = null;
 
     FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
@@ -42,61 +42,34 @@ public class RegistrationFragment extends Fragment{
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-
-        
-
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_registration, container, false);
+        View mView = inflater.inflate(R.layout.fragment_registration, container, false);
 
-        context = view;
-
-        userEmailEt = view.findViewById(R.id.inputEmail);
-        userPasswordEt = view.findViewById(R.id.inputPassword);
-        registerBtn = view.findViewById(R.id.registerButton);
-        userFirstNameEt=view.findViewById(R.id.inputFirstName);
-        userLastNameEt=view.findViewById(R.id.inputLastName);
-        roleCheckBox=view.findViewById(R.id.roleCheckbox);
+        userEmailEt = mView.findViewById(R.id.inputEmail);
+        userPasswordEt = mView.findViewById(R.id.inputPassword);
+        registerBtn = mView.findViewById(R.id.registerButton);
+        userFirstNameEt=mView.findViewById(R.id.inputFirstName);
+        userLastNameEt=mView.findViewById(R.id.inputLastName);
+        roleCheckBox=mView.findViewById(R.id.roleCheckbox);
 
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if(validationDetails()){
-                    temp();
-                }
+                validationDetails();
+                RepositoryManager.GetInstance().AddUser(addingUser,mView.getContext());
             }
         });
 
-
-        return view;
+        return mView;
     }
 
-    @Override
-    public void onStart() { super.onStart(); }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-    }
-    
-    private boolean validationDetails(){
+    private void validationDetails(){
 
         String userEmail = userEmailEt.getText().toString(),
                 userPassword = userPasswordEt.getText().toString(),
@@ -106,20 +79,14 @@ public class RegistrationFragment extends Fragment{
         if(userFirstName.isEmpty()){
             userFirstNameEt.setError("first name empty");
             userFirstNameEt.requestFocus();
-
-            return false;
         }
-        if(userLastName.isEmpty()){
+        else if(userLastName.isEmpty()){
             userEmailEt.setError("userLastNameEt empty");
             userEmailEt.requestFocus();
-
-            return false;
         }
-        if(userEmail.isEmpty()){
+        else if(userEmail.isEmpty()){
             userEmailEt.setError("email empty");
             userEmailEt.requestFocus();
-
-            return false;
         }
        /* if(Patterns.EMAIL_ADDRESS.matcher(userEmail).matches()){
             userEmailEt.setError("invalid email address");
@@ -127,42 +94,10 @@ public class RegistrationFragment extends Fragment{
 
             return false;
         } */
-        if(userPassword.isEmpty()){
+        else if(userPassword.isEmpty()){
             userPasswordEt.setError("userPassword empty");
             userPasswordEt.requestFocus();
-
-            return false;
         }
-
-        return true;
-    }
-
-    private void temp(){
-
-        firebaseAuth.createUserWithEmailAndPassword(userEmailEt.getText().toString(), userPasswordEt.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-
-                    User user = new User(userEmailEt.getText().toString(),userPasswordEt.getText().toString());
-
-                    FirebaseDatabase.getInstance().getReference("users").child(firebaseAuth.getCurrentUser().getUid()).setValue(user).addOnCompleteListener(
-                            new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if(task.isSuccessful()){
-                                        Toast.makeText(context.getContext(), "good", Toast.LENGTH_LONG).show();
-                                    }
-                                    else{
-                                        Toast.makeText(context.getContext(), "cos emeck", Toast.LENGTH_LONG).show();
-                                    }
-                                }
-                            });
-                }
-                else{
-                    Toast.makeText(context.getContext(), "cos emeck X33333", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
+        else {addingUser = new User(userEmail, userPassword);}
     }
 }

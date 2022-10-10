@@ -3,6 +3,10 @@ package com.example.finalproject;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavHostController;
+import androidx.navigation.NavOptions;
+import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -11,6 +15,7 @@ import android.widget.TextView;
 
 import com.example.finalproject.Fragment.CalenderFragment;
 import com.example.finalproject.Fragment.ChatFragment;
+import com.example.finalproject.Fragment.ConversationFragment;
 import com.example.finalproject.Fragment.LoginFragment;
 import com.example.finalproject.Fragment.ProfileFragment;
 import com.example.finalproject.Fragment.RegistrationFragment;
@@ -30,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
 
         addMeetingBtn=findViewById(R.id.fab);
         header=findViewById(R.id.mainActTopHeaderText);
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, new ProfileFragment()).commit();
 
         initializeBottomNav();
     }
@@ -48,27 +52,25 @@ public class MainActivity extends AppCompatActivity {
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    Fragment selectedFragment = null;
-
                     switch(item.getItemId()){
                         case R.id.mi_profile:
-                            selectedFragment=new LoginFragment();
+
+                            Navigation.findNavController(MainActivity.this,R.id.fragmentContainer).navigate(R.id.loginFragment);
                             header.setVisibility(View.GONE);
                             break;
                         case R.id.mi_calender:
-                            selectedFragment=new RegistrationFragment();//CalenderFragment();
+                            //Navigation.findNavController(MainActivity.this,R.id.fragmentContainer).navigate(R.id.);
                             break;
                         case R.id.mi_chat:
-                            selectedFragment=new ChatFragment();
+                            Navigation.findNavController(MainActivity.this,R.id.fragmentContainer).navigate(R.id.conversationFragment);
                             break;
                         case R.id.mi_room:
-                            selectedFragment=new RoomsFragment();
+                            Navigation.findNavController(MainActivity.this,R.id.fragmentContainer).navigate(R.id.chatFragment);
                             break;
                         default:
                             break;
                     }
 
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, selectedFragment).commit();
                     return true;
                 }
             };

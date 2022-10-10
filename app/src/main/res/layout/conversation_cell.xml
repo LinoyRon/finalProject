@@ -16,11 +16,11 @@
 
         <ImageView
             android:id="@+id/userProfileImageInChat"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginBottom="5dp"
             android:layout_marginEnd="5dp"
-            android:background="@drawable/chatprofile_background"/>
+            android:background="@drawable/profile_circle_background"/>
 
         <TextView
             android:id="@+id/userNameInChat"
@@ -28,6 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|right"
             android:paddingStart="10dp"
+            android:textSize="15sp"
             tools:text="name name" />
 
     </LinearLayout>
@@ -36,6 +37,6 @@
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:layout_gravity="bottom"
-        android:background="@color/colorPrimaryDark" />
+        android:background="@color/colorPrimary" />
 
 </androidx.cardview.widget.CardView>

@@ -15,6 +15,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import com.example.finalproject.Instance.User;
 import com.example.finalproject.R;
@@ -27,6 +28,7 @@ public class LoginFragment extends Fragment{
     TextView forgotPassword;
     User signInUser;
     ProgressBar myProgressBar;
+    View mView;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -41,27 +43,27 @@ public class LoginFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        mView = inflater.inflate(R.layout.fragment_login, container, false);
+        setViews();
+        return mView;
+    }
 
-        View view = inflater.inflate(R.layout.fragment_login, container, false);
-        userEmailEt = view.findViewById(R.id.inputEmail);
-        userPasswordEt = view.findViewById(R.id.inputPassword);
-        loginBtn = view.findViewById(R.id.btnLogin);
-        forgotPassword = view.findViewById(R.id.forgotPassword);
-        myProgressBar=view.findViewById(R.id.progressBar);
+    private void setViews() {
+        userEmailEt = mView.findViewById(R.id.inputEmail);
+        userPasswordEt = mView.findViewById(R.id.inputPassword);
+        loginBtn = mView.findViewById(R.id.btnLogin);
+        forgotPassword = mView.findViewById(R.id.forgotPassword);
+        myProgressBar=mView.findViewById(R.id.progressBar);
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 myProgressBar.setVisibility(View.VISIBLE);
                 validationDetails();
-
-                if(signInUser!=null) {
-                    if (RepositoryManager.GetInstance().SignIn(signInUser,view.getContext())) {
-
-                        Intent intent = new Intent(view.getContext(), ProfileFragment.class);
-                        startActivity(intent);
-                        Toast.makeText(view.getContext(), "great", Toast.LENGTH_LONG).show();
-                    }
+                if (RepositoryManager.GetInstance().SignIn(signInUser,view.getContext())) {
+                    //need to pass the uid
+                    //Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_profileFragment);
+                    Toast.makeText(mView.getContext(), "great", Toast.LENGTH_LONG).show();
                 }
 
                 myProgressBar.setVisibility(View.GONE);
@@ -74,8 +76,6 @@ public class LoginFragment extends Fragment{
 
             }
         });
-
-        return view;
     }
 
     private void validationDetails(){
@@ -93,11 +93,10 @@ public class LoginFragment extends Fragment{
 
             return false;
         }*/
-        if(userPassword.isEmpty()){
+        else if(userPassword.isEmpty()){
             userPasswordEt.setError("userPassword empty");
             userPasswordEt.requestFocus();
         }
-
-        signInUser = new User(userEmail, userPassword);
+        else{signInUser = new User(userEmail, userPassword);}
     }
 }
