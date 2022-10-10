@@ -1,30 +1,30 @@
 package com.example.finalproject.Instance;
 
 public class Conversation {
-    String conversationId;
-    User oppositeUser;
+    String mConversationId;
+    User mChatPartner;
 
     public Conversation() {
     }
 
-    public Conversation(String conversationId, User oppositeUser) {
-        this.conversationId = conversationId;
-        this.oppositeUser = oppositeUser;
+    public Conversation(String mConversationId, User mChatPartner) {
+        this.mConversationId = mConversationId;
+        this.mChatPartner = mChatPartner;
     }
 
     public String getConversationId() {
-        return conversationId;
+        return mConversationId;
     }
 
-    public void setConversationId(String conversationId) {
-        this.conversationId = conversationId;
+    public void setConversationId(String mConversationId) {
+        this.mConversationId = mConversationId;
     }
 
-    public User getOppositeUser() {
-        return oppositeUser;
+    public User getChatPartner() {
+        return mChatPartner;
     }
 
-    public void setOppositeUser(User oppositeUser) {
-        this.oppositeUser = oppositeUser;
+    public void setChatPartner(User mChatPartner) {
+        this.mChatPartner = mChatPartner;
     }
 }
