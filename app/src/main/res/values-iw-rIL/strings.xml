@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">finalProject</string>
+    <string name="type">תקליד הודעה...</string>
+    <string name="setting">הגדרות</string>
+    <string name="search">חיפוש</string>
+    <string name="forgot_password">שכחת סיסמה?</string>
+    <string name="login">התחבר</string>
+    <string name="password">סיסמה</string>
+    <string name="email">כתובת מייל</string>
+    <string name="room">חדרים</string>
+    <string name="chat">צ\'אט</string>
+    <string name="profile">פרופיל</string>
+    <string name="calender">לוח שנה</string>
+</resources>
