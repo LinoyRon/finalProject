@@ -3,6 +3,6 @@
     <corners android:radius="100dp"/>
     <gradient
         android:type="linear"
-        android:startColor="@color/colorPrimaryDarkSecond"
+        android:startColor="@color/colorPrimaryDark"
         android:endColor="#ad4de6" />
 </shape>

@@ -12,8 +12,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.finalproject.Activities.ChatActivity;
 import com.example.finalproject.ConversationLogic.ConversationAdapter;
 import com.example.finalproject.ConversationLogic.ConversationManager;
 import com.example.finalproject.Instance.Conversation;
@@ -60,7 +58,7 @@ public class ConversationFragment extends Fragment {
     }
 
     private void openChatActivity(String iChatId, User iUser) {
-        Intent intent = new Intent(getActivity(), ChatActivity.class);
+        Intent intent = new Intent(getActivity(), com.example.finalproject.Activities.ChatActivity.class);
         intent.putExtra("CONVERSATION_ID", iChatId);
         intent.putExtra("USER", iUser);
         startActivity(intent);

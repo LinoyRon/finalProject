@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_50"
+    android:padding="15dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/courseFragLoginBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+
+        android:divider="@android:color/transparent"
+        android:elevation="8dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="10dp"
+        app:cardPreventCornerOverlap="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/popUpDialogTitle"
+                style="@style/Bold19White"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_pop_up"
+                android:gravity="center"
+                android:paddingVertical="23dp"
+                tools:text="Main title" />
+
+            <TextView
+                android:id="@+id/popUpDialogDesc"
+                style="@style/Reg17Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="23dp"
+                android:gravity="center"
+                android:lineSpacingExtra="9dp"
+                android:paddingHorizontal="23dp"
+                android:paddingBottom="50dp"
+                tools:text="some thing in the description" />
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="70dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:divider="@android:color/transparent"
+                android:elevation="8dp"
+                app:cardCornerRadius="50dp"
+                app:cardElevation="10dp"
+                app:cardPreventCornerOverlap="false">
+
+                <TextView
+                    android:id="@+id/popUpNaturalBtn"
+                    style="@style/Bold15White"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center"
+                    android:background="@drawable/btn_rectangle_primary"
+                    android:gravity="center"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="15dp"
+                    tools:text="Ok" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="70dp"
+                android:layout_marginBottom="23dp"
+                android:divider="@android:color/transparent"
+                android:elevation="8dp"
+                app:cardCornerRadius="50dp"
+                app:cardElevation="10dp"
+                app:cardPreventCornerOverlap="false">
+
+                <TextView
+                    android:id="@+id/popUpNegativeBtn"
+                    style="@style/Bold15White"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center"
+                    android:background="@drawable/btn_rectangle_primary"
+                    android:gravity="center"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="15dp"
+                    tools:text="Cancel" />
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/popUpCloseBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="23dp"
+            android:background="@null"
+            android:src="@drawable/ic_close_black" />
+
+
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

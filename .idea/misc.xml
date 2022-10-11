@@ -3,9 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable-v24/background_pop_up.xml" value="0.1" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable-v24/btn_rectangle_primary.xml" value="0.1" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable-v24/chatprofile_background.xml" value="0.1015" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable-v24/ic_close_black.xml" value="0.1" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1015" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable-v24/placeholder_circle.xml" value="0.10666666666666667" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable-v24/splash_screen_drawable.xml" value="0.1" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/background_message_sent.xml" value="0.1045" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/background_messageleft.xml" value="0.106" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/background_messageright.xml" value="0.106" />
@@ -21,6 +25,7 @@
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/ic_lock.xml" value="0.1015" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/ic_profile.xml" value="0.1015" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/ic_room.xml" value="0.1015" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/ic_search.xml" value="0.1" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/ic_send.xml" value="0.106" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/ic_settings.xml" value="0.111" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/ic_wave.xml" value="0.1015" />
@@ -32,6 +37,7 @@
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/activity_main.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/chat_cell.xml" value="0.14743589743589744" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/conversation_cell.xml" value="0.1796875" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/dialog_popup.xml" value="0.12395833333333334" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/fragment_addmeeting.xml" value="0.1796875" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/fragment_calender.xml" value="0.1796875" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/fragment_chat.xml" value="0.1796875" />

@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="TextLabel" parent="TextAppearance.Design.Hint">
-        <item name="android:textSize">14sp</item>
-    </style>
-
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -18,7 +14,6 @@
         <item name="android:windowBackground">@drawable/splash_screen_drawable</item>
     </style>
 
-
     <style name="FullScreenDialogStyle" parent="Theme.AppCompat.Dialog">
         <item name="android:windowNoTitle">true</item>
         <item name="colorPrimaryDark">@color/colorPrimary</item>
@@ -31,77 +26,76 @@
         <item name="android:statusBarColor" tools:targetApi="23">@color/transparent</item>
     </style>
 
-
     <!--       Spartan Regular       -->
 
     <style name="Reg9Black">
-        <item name="android:fontFamily">@font/spartan_regular</item>
+        <item name="android:fontFamily">@font/rubik_regular</item>
         <item name="android:textSize">9.6sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="Reg9White">
-        <item name="android:fontFamily">@font/spartan_regular</item>
+        <item name="android:fontFamily">@font/rubik_regular</item>
         <item name="android:textSize">9.6sp</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="Reg9Primary">
-        <item name="android:fontFamily">@font/spartan_regular</item>
+        <item name="android:fontFamily">@font/rubik_regular</item>
         <item name="android:textSize">9.6sp</item>
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
     <style name="Reg11Black">
-        <item name="android:fontFamily">@font/spartan_regular</item>
+        <item name="android:fontFamily">@font/rubik_regular</item>
         <item name="android:textSize">11.5sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="Reg11White">
-        <item name="android:fontFamily">@font/spartan_regular</item>
+        <item name="android:fontFamily">@font/rubik_regular</item>
         <item name="android:textSize">11.5sp</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="Reg11Primary">
-        <item name="android:fontFamily">@font/spartan_regular</item>
+        <item name="android:fontFamily">@font/rubik_regular</item>
         <item name="android:textSize">11.5sp</item>
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
     <style name="Reg13Black">
-        <item name="android:fontFamily">@font/spartan_regular</item>
+        <item name="android:fontFamily">@font/rubik_regular</item>
         <item name="android:textSize">13.4sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="Reg13White">
-        <item name="android:fontFamily">@font/spartan_regular</item>
+        <item name="android:fontFamily">@font/rubik_regular</item>
         <item name="android:textSize">13.4sp</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="Reg13Primary">
-        <item name="android:fontFamily">@font/spartan_regular</item>
+        <item name="android:fontFamily">@font/rubik_regular</item>
         <item name="android:textSize">13sp</item>
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
     <style name="Reg15Black">
-        <item name="android:fontFamily">@font/spartan_regular</item>
+        <item name="android:fontFamily">@font/rubik_regular</item>
         <item name="android:textSize">15.4sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="Reg15White">
-        <item name="android:fontFamily">@font/spartan_regular</item>
+        <item name="android:fontFamily">@font/rubik_regular</item>
         <item name="android:textSize">15.4sp</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="Reg15Primary">
-        <item name="android:fontFamily">@font/spartan_regular</item>
+        <item name="android:fontFamily">@font/rubik_regular</item>
         <item name="android:textSize">15.4sp</item>
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
@@ -121,104 +115,104 @@
     <!--       Spartan Semi Bold       -->
 
     <style name="SemiBold7Black">
-        <item name="android:fontFamily">@font/spartan_semi_bold</item>
+        <item name="android:fontFamily">@font/rubik_semi_bold</item>
         <item name="android:textSize">7sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="SemiBold8Black">
-        <item name="android:fontFamily">@font/spartan_semi_bold</item>
+        <item name="android:fontFamily">@font/rubik_semi_bold</item>
         <item name="android:textSize">8sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="SemiBold9Black">
-        <item name="android:fontFamily">@font/spartan_semi_bold</item>
+        <item name="android:fontFamily">@font/rubik_semi_bold</item>
         <item name="android:textSize">9.6sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="SemiBold10Black">
-        <item name="android:fontFamily">@font/spartan_semi_bold</item>
+        <item name="android:fontFamily">@font/rubik_semi_bold</item>
         <item name="android:textSize">10sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="SemiBold11White">
-        <item name="android:fontFamily">@font/spartan_semi_bold</item>
+        <item name="android:fontFamily">@font/rubik_semi_bold</item>
         <item name="android:textSize">11.5sp</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="SemiBold11Primary">
-        <item name="android:fontFamily">@font/spartan_semi_bold</item>
+        <item name="android:fontFamily">@font/rubik_semi_bold</item>
         <item name="android:textSize">11.5sp</item>
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
     <style name="SemiBold12Black">
-        <item name="android:fontFamily">@font/spartan_semi_bold</item>
+        <item name="android:fontFamily">@font/rubik_semi_bold</item>
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="SemiBold12White">
-        <item name="android:fontFamily">@font/spartan_semi_bold</item>
+        <item name="android:fontFamily">@font/rubik_semi_bold</item>
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="SemiBold13Black">
-        <item name="android:fontFamily">@font/spartan_semi_bold</item>
+        <item name="android:fontFamily">@font/rubik_semi_bold</item>
         <item name="android:textSize">13sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="SemiBold13White">
-        <item name="android:fontFamily">@font/spartan_semi_bold</item>
+        <item name="android:fontFamily">@font/rubik_semi_bold</item>
         <item name="android:textSize">13.4sp</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="SemiBold13Primary">
-        <item name="android:fontFamily">@font/spartan_semi_bold</item>
+        <item name="android:fontFamily">@font/rubik_semi_bold</item>
         <item name="android:textSize">13.4sp</item>
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
     <style name="SemiBold14Black">
-        <item name="android:fontFamily">@font/spartan_semi_bold</item>
+        <item name="android:fontFamily">@font/rubik_semi_bold</item>
         <item name="android:textSize">14.4sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
 
     <style name="SemiBold15Black">
-        <item name="android:fontFamily">@font/spartan_semi_bold</item>
+        <item name="android:fontFamily">@font/rubik_semi_bold</item>
         <item name="android:textSize">15.4sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="SemiBold17Black">
-        <item name="android:fontFamily">@font/spartan_semi_bold</item>
+        <item name="android:fontFamily">@font/rubik_semi_bold</item>
         <item name="android:textSize">17.3sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="SemiBold17White">
-        <item name="android:fontFamily">@font/spartan_semi_bold</item>
+        <item name="android:fontFamily">@font/rubik_semi_bold</item>
         <item name="android:textSize">17.3sp</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="SemiBold19Black">
-        <item name="android:fontFamily">@font/spartan_semi_bold</item>
+        <item name="android:fontFamily">@font/rubik_semi_bold</item>
         <item name="android:textSize">19.2sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="SemiBold20Black">
-        <item name="android:fontFamily">@font/spartan_semi_bold</item>
+        <item name="android:fontFamily">@font/rubik_semi_bold</item>
         <item name="android:textSize">20.8sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
@@ -227,55 +221,55 @@
     <!--       Spartan Bold       -->
 
     <style name="Bold8Black">
-        <item name="android:fontFamily">@font/spartan_bold</item>
+        <item name="android:fontFamily">@font/rubik_bold</item>
         <item name="android:textSize">8.4sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="Bold8White">
-        <item name="android:fontFamily">@font/spartan_bold</item>
+        <item name="android:fontFamily">@font/rubik_bold</item>
         <item name="android:textSize">8.4sp</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="Bold9Black">
-        <item name="android:fontFamily">@font/spartan_bold</item>
+        <item name="android:fontFamily">@font/rubik_bold</item>
         <item name="android:textSize">9.6sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="Bold9White">
-        <item name="android:fontFamily">@font/spartan_bold</item>
+        <item name="android:fontFamily">@font/rubik_bold</item>
         <item name="android:textSize">9.6sp</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="Bold11Black">
-        <item name="android:fontFamily">@font/spartan_bold</item>
+        <item name="android:fontFamily">@font/rubik_bold</item>
         <item name="android:textSize">11.5sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="Bold11White">
-        <item name="android:fontFamily">@font/spartan_bold</item>
+        <item name="android:fontFamily">@font/rubik_bold</item>
         <item name="android:textSize">11.5sp</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="Bold13Black">
-        <item name="android:fontFamily">@font/spartan_bold</item>
+        <item name="android:fontFamily">@font/rubik_bold</item>
         <item name="android:textSize">13.4sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="Bold13White">
-        <item name="android:fontFamily">@font/spartan_bold</item>
+        <item name="android:fontFamily">@font/rubik_bold</item>
         <item name="android:textSize">13.4sp</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="Bold13Primary">
-        <item name="android:fontFamily">@font/spartan_bold</item>
+        <item name="android:fontFamily">@font/rubik_bold</item>
         <item name="android:textSize">13.4sp</item>
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
@@ -287,119 +281,118 @@
     </style>
 
     <style name="Bold13CoolGrey">
-        <item name="android:fontFamily">@font/spartan_bold</item>
+        <item name="android:fontFamily">@font/rubik_bold</item>
         <item name="android:textSize">13sp</item>
         <item name="android:textColor">@color/cool_grey</item>
     </style>
 
     <style name="Bold15Black">
-        <item name="android:fontFamily">@font/spartan_bold</item>
+        <item name="android:fontFamily">@font/rubik_bold</item>
         <item name="android:textSize">15.4sp</item>
         <item name="android:letterSpacing">0</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="Bold15White">
-        <item name="android:fontFamily">@font/spartan_bold</item>
+        <item name="android:fontFamily">@font/rubik_bold</item>
         <item name="android:textSize">15.4sp</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="Bold17Black">
-        <item name="android:fontFamily">@font/spartan_bold</item>
+        <item name="android:fontFamily">@font/rubik_bold</item>
         <item name="android:textSize">17.3sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="Bold17White">
-        <item name="android:fontFamily">@font/spartan_bold</item>
+        <item name="android:fontFamily">@font/rubik_bold</item>
         <item name="android:textSize">17.3sp</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="Bold19Black">
-        <item name="android:fontFamily">@font/spartan_bold</item>
+        <item name="android:fontFamily">@font/rubik_bold</item>
         <item name="android:textSize">19.2sp</item>
         <item name="android:letterSpacing">0</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="Bold19White">
-        <item name="android:fontFamily">@font/spartan_bold</item>
+        <item name="android:fontFamily">@font/rubik_bold</item>
         <item name="android:textSize">19.2sp</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="Bold19Primary">
-        <item name="android:fontFamily">@font/spartan_bold</item>
+        <item name="android:fontFamily">@font/rubik_bold</item>
         <item name="android:textSize">19.2sp</item>
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
     <style name="Bold21Black">
-        <item name="android:fontFamily">@font/spartan_bold</item>
+        <item name="android:fontFamily">@font/rubik_bold</item>
         <item name="android:textSize">21sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="Bold21White">
-        <item name="android:fontFamily">@font/spartan_bold</item>
+        <item name="android:fontFamily">@font/rubik_bold</item>
         <item name="android:textSize">21sp</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="Bold23Black">
-        <item name="android:fontFamily">@font/spartan_bold</item>
+        <item name="android:fontFamily">@font/rubik_bold</item>
         <item name="android:textSize">23sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="Bold23White">
-        <item name="android:fontFamily">@font/spartan_bold</item>
+        <item name="android:fontFamily">@font/rubik_bold</item>
         <item name="android:textSize">23sp</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="Bold25Black">
-        <item name="android:fontFamily">@font/spartan_bold</item>
+        <item name="android:fontFamily">@font/rubik_bold</item>
         <item name="android:textSize">25sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
+    <style name="Bold25White">
+        <item name="android:fontFamily">@font/rubik_bold</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
     <style name="Title23White">
-        <item name="android:fontFamily">@font/spartan_bold</item>
+        <item name="android:fontFamily">@font/assistant_extrabold</item>
         <item name="android:textSize">23sp</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="Title27White">
-        <item name="android:fontFamily">@font/spartan_bold</item>
+        <item name="android:fontFamily">@font/assistant_extrabold</item>
         <item name="android:textSize">27sp</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
-
     <style name="Thin11Black">
-        <item name="android:fontFamily">@font/spartan_thin</item>
+        <item name="android:fontFamily">@font/rubik_thin</item>
         <item name="android:textSize">11sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="Thin13Black">
-        <item name="android:fontFamily">@font/spartan_thin</item>
-        <item name="android:textSize">13sp</item>
-        <item name="android:textColor">@color/black</item>
-    </style>
-
-    <style name="Helvetica13Black">
-        <item name="android:fontFamily">@font/helvetica</item>
+        <item name="android:fontFamily">@font/rubik_thin</item>
         <item name="android:textSize">13sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="HintText" parent="TextAppearance.Design.Hint">
         <item name="android:textSize">13.4sp</item>
-        <item name="fontFamily">@font/spartan_semi_bold</item>
+        <item name="fontFamily">@font/rubik_semi_bold</item>
         <item name="android:textColor">@color/black</item>
         <item name="colorAccent">@color/colorPrimary</item>
     </style>

@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.finalproject.ConversationLogic.ConversationManager;
+import com.example.finalproject.Feature.PopUpDialog;
 import com.example.finalproject.R;
 import com.example.finalproject.RoomsLogic.RoomsAdapter;
 import com.example.finalproject.RoomsLogic.RoomsManager;
@@ -51,7 +52,25 @@ public class RoomsFragment extends Fragment {
         myRoomsManager.getRoomAdapter().setMyRoomListener(new RoomsAdapter.MyRoomListener() {
             @Override
             public void onRoomClicked(int adapterPosition) {
-                //open dialog do you want to take the room
+                PopUpDialog.PopUpDialogListener listener = new PopUpDialog.PopUpDialogListener() {
+                    @Override
+                    public void onNaturalBtnClick() {
+
+                    }
+
+                    @Override
+                    public void onNegativeBtnClick() {
+                        //do nothing
+                    }
+                };
+                PopUpDialog.newInstance(
+                        "title",
+                        "תיאור",
+                        "כפתור חיובי",
+                        "כפתור שלילי",
+                        listener,
+                        true
+                ).show(getParentFragmentManager(), "POP_UP_DIALOG");
             }
         });
 
