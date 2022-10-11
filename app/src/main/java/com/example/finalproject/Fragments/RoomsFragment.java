@@ -1,6 +1,7 @@
 package com.example.finalproject.Fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.finalproject.ConversationLogic.ConversationManager;
 import com.example.finalproject.R;
+import com.example.finalproject.RoomsLogic.RoomsAdapter;
 import com.example.finalproject.RoomsLogic.RoomsManager;
 
 public class RoomsFragment extends Fragment {
@@ -40,9 +42,19 @@ public class RoomsFragment extends Fragment {
     }
 
     private void setRecyclerView(){
+        RoomsManager myRoomsManager = new RoomsManager();
+
         myRoomRecyclerView = myView.findViewById(R.id.roomsRecyclerview);
         myRoomRecyclerView.setHasFixedSize(true);
         myRoomRecyclerView.setLayoutManager(new LinearLayoutManager(myView.getContext()));
-        myRoomRecyclerView.setAdapter(new RoomsManager().getRoomAdapter());
+
+        myRoomsManager.getRoomAdapter().setMyRoomListener(new RoomsAdapter.MyRoomListener() {
+            @Override
+            public void onRoomClicked(int adapterPosition) {
+                //open dialog do you want to take the room
+            }
+        });
+
+        myRoomRecyclerView.setAdapter(myRoomsManager.getRoomAdapter());
     }
 }

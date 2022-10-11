@@ -1,7 +1,9 @@
 package com.example.finalproject.RoomsLogic;
 
 import android.content.Context;
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -16,10 +18,26 @@ import com.example.finalproject.R;
 
 import java.util.List;
 
-public class RoomsAdapter extends RecyclerView.Adapter<RoomsAdapter.ConversationViewHolder> {
+interface ItemTouchHelperAdapter { void OnItemSwiped(int i_Position); }
 
+public class RoomsAdapter extends RecyclerView.Adapter<RoomsAdapter.ConversationViewHolder>
+        implements ItemTouchHelperAdapter{
+
+    private static MyRoomListener myRoomListener;
     private List<Room> mRooms;
     Context m_Context;
+
+    @Override
+    public void OnItemSwiped(int i_Position) {
+        //MainActivity.m_DeleteDialog.setPosition(i_Position);
+        //MainActivity.m_DeleteDialog.show();
+    }
+
+    public interface MyRoomListener { void onRoomClicked(int adapterPosition);  }
+
+    public static void setMyRoomListener(MyRoomListener iRoomListener) {
+        myRoomListener = iRoomListener;
+    }
 
     public RoomsAdapter(List<Room> mRooms) {
         this.mRooms = mRooms;
@@ -53,15 +71,59 @@ public class RoomsAdapter extends RecyclerView.Adapter<RoomsAdapter.Conversation
     @Override
     public int getItemCount() { return mRooms.size();  }
 
-    protected class ConversationViewHolder extends RecyclerView.ViewHolder{
+    protected class ConversationViewHolder extends RecyclerView.ViewHolder
+            implements GestureDetector.OnGestureListener{
 
         TextView roomNumber, roomOwner;
+        private GestureDetector gestureDetector;
 
         public ConversationViewHolder(@NonNull View itemView) {
             super(itemView);
 
             roomNumber=itemView.findViewById(R.id.roomNumber);
             roomOwner=itemView.findViewById(R.id.roomOwnerName);
+            gestureDetector = new GestureDetector(itemView.getContext(), this);
+
+            itemView.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View view, MotionEvent motionEvent) {
+                    gestureDetector.onTouchEvent(motionEvent);
+
+                    return true;
+                }
+            });
+        }
+
+        @Override
+        public boolean onDown(MotionEvent motionEvent) {
+            return false;
+        }
+
+        @Override
+        public void onShowPress(MotionEvent motionEvent) {
+
+        }
+
+        @Override
+        public boolean onSingleTapUp(MotionEvent motionEvent) {
+            if (myRoomListener != null){ myRoomListener.onRoomClicked(getAdapterPosition()); }
+
+            return true;
+        }
+
+        @Override
+        public boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent1, float v, float v1) {
+            return false;
+        }
+
+        @Override
+        public void onLongPress(MotionEvent motionEvent) {
+
+        }
+
+        @Override
+        public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent1, float v, float v1) {
+            return true;
         }
     }
 }
