@@ -15,6 +15,7 @@
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1015" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/ic_calender.xml" value="0.1015" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/ic_chat.xml" value="0.1015" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/ic_check.xml" value="0.1" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/ic_email.xml" value="0.1015" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1015" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/ic_lock.xml" value="0.1015" />
@@ -44,6 +45,7 @@
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/lauout_conversations.xml" value="0.17864583333333334" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/loginpage.xml" value="0.1796875" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/message_cell.xml" value="0.1640625" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/room_cell.xml" value="0.1640625" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1140625" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/menu/botton_nav_menu.xml" value="0.1796875" />
       </map>

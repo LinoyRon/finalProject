@@ -7,23 +7,26 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.finalproject.Fragment.LoginFragment"
+        android:name="com.example.finalproject.Fragments.LoginFragment"
         android:label="LoginFragment"
-        tools:layout="@layout/fragment_login"/>
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/action_loginFragment_to_profileFragment2"
+            app:destination="@id/profileFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/conversationFragment"
-        android:name="com.example.finalproject.Fragment.ConversationFragment"
+        android:name="com.example.finalproject.Fragments.ConversationFragment"
         tools:layout="@layout/fragment_conversation"
         android:label="ConversationFragment" />
     <fragment
-        android:id="@+id/roomsFragment"
-        android:name="com.example.finalproject.Fragment.RoomsFragment"
-        android:label="RoomsFragment"
-        tools:layout="@layout/fragment_rooms"/>
-    <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.finalproject.Fragment.ProfileFragment"
-        android:label="ProfileFragment"
-        tools:layout="@layout/fragment_profile"/>
+        android:name="com.example.finalproject.Fragments.ProfileFragment"
+        android:label="ProfileFragment" />
+    <fragment
+        android:id="@+id/roomsFragment"
+        android:name="com.example.finalproject.Fragments.RoomsFragment"
+        android:label="RoomsFragment" />
 </navigation>
