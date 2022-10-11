@@ -76,8 +76,6 @@ public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapte
             userProfilePic=itemView.findViewById(R.id.userProfileImageInChat);
             userName=itemView.findViewById(R.id.userNameInChat);
 
-            //userName.setText(mCurrentConversation.getChatPartner().getFirstName()+' '+mCurrentConversation.getChatPartner().getLastName());
-
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

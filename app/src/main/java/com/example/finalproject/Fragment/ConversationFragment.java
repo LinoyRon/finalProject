@@ -26,7 +26,7 @@ import java.io.Serializable;
 public class ConversationFragment extends Fragment {
 
     View myView;
-    private RecyclerView myChatRecyclerView;
+    private RecyclerView myConverationRecyclerView;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -47,10 +47,10 @@ public class ConversationFragment extends Fragment {
     }
 
     private void setRecyclerView(){
-        myChatRecyclerView = myView.findViewById(R.id.chatRecyclerview);
-        myChatRecyclerView.setHasFixedSize(true);
-        myChatRecyclerView.setLayoutManager(new LinearLayoutManager(myView.getContext()));
-        myChatRecyclerView.setAdapter(new ConversationManager(getConversationAdapterListener()).getConversationAdapter());
+        myConverationRecyclerView = myView.findViewById(R.id.chatRecyclerview);
+        myConverationRecyclerView.setHasFixedSize(true);
+        myConverationRecyclerView.setLayoutManager(new LinearLayoutManager(myView.getContext()));
+        myConverationRecyclerView.setAdapter(new ConversationManager(getConversationAdapterListener()).getConversationAdapter());
     }
 
     private ConversationAdapter.ConversationAdapterListener getConversationAdapterListener() {

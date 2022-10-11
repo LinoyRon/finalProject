@@ -9,8 +9,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.bumptech.glide.Glide;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import com.example.finalproject.ChatLogic.MessageManager;
 import com.example.finalproject.Instance.Message;
 import com.example.finalproject.Instance.User;
 import com.example.finalproject.R;
@@ -25,6 +26,7 @@ public class ChatActivity extends AppCompatActivity {
     EditText messageEt;
     User chatPartner;
     String conversationId;
+    RecyclerView myChatHistoryRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,7 @@ public class ChatActivity extends AppCompatActivity {
         chatPartner = intent.getParcelableExtra("USER");
 
         setViews();
+        setRecyclerView();
     }
 
     private void setViews() {
@@ -49,10 +52,24 @@ public class ChatActivity extends AppCompatActivity {
                 .load(chatPartner.getPhotoPath())
                 .circleCrop()
                 .into(chatProfileImage);*/
+
+        sendMessageBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //sendMessage(new Message());
+            }
+        });
     }
 
-    private void sendMessage(String iSender, String iReceiver, String iMessage){
+    private void sendMessage(Message iMessage){
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
-        reference.child("Chats").push().setValue(new Message(iSender,iReceiver,iMessage));
+        reference.child("Chats").push().setValue(iMessage);
+    }
+
+    private void setRecyclerView(){
+        myChatHistoryRecyclerView = findViewById(R.id.chattingHistoryRecycleView);
+        myChatHistoryRecyclerView.setHasFixedSize(true);
+        myChatHistoryRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        myChatHistoryRecyclerView.setAdapter(new MessageManager().getMassageAdapter());
     }
 }
