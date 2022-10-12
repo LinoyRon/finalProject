@@ -1,6 +1,7 @@
 package com.example.finalproject.RoomsLogic;
 
 import com.example.finalproject.ChatLogic.MassageAdapter;
+import com.example.finalproject.Firebase.RoomsRepository;
 import com.example.finalproject.Instance.Message;
 import com.example.finalproject.Instance.Room;
 import com.example.finalproject.Instance.User;
@@ -9,30 +10,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RoomsManager {
-
+    private static RoomsManager mInstance = new RoomsManager();
+    private RoomsRepository mRoomsRepository;
     private RoomsAdapter mRoomAdapter;
-    private List<Room> mRooms;
+    private ArrayList<Room> mRoomsList;
+
+    public static RoomsManager getInstance(){ return mInstance; }
 
     public RoomsManager() {
-        initListTemp();
-        mRoomAdapter = new RoomsAdapter(mRooms);
+        mRoomsRepository=new RoomsRepository();
+        mRoomsList = mRoomsRepository.getRoomList();
+        mRoomAdapter = new RoomsAdapter(mRoomsList);
     }
 
-    public RoomsAdapter getRoomAdapter() {
-        return mRoomAdapter;
-    }
+    public RoomsRepository getRoomsRepository() { return mRoomsRepository; }
 
-    private void initListTemp() {
-        mRooms = new ArrayList<>();
-        mRooms.add(new Room("123", "123"));
-        mRooms.add(new Room("123", "123"));
-        mRooms.add(new Room("123", "123"));
-        mRooms.add(new Room("123", "123"));
-        mRooms.add(new Room("123", "123"));
-        mRooms.add(new Room("123", "123"));
-        mRooms.add(new Room("123", "123"));
-        mRooms.add(new Room("123", "123"));
-        mRooms.add(new Room("123", "123"));
-        mRooms.add(new Room("123", "123"));
+    public RoomsAdapter getRoomAdapter() { return mRoomAdapter;  }
+
+    public ArrayList<Room> getRoomsList() {
+        mRoomsList = mRoomsRepository.getRoomList();
+        mRoomAdapter.notifyDataSetChanged();
+
+        return mRoomsList;
     }
 }

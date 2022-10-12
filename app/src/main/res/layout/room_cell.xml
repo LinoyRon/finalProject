@@ -40,19 +40,20 @@
                     android:id="@+id/roomOwnerName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="10sp"
+                    android:textSize="15sp"
                     android:layout_marginTop="5dp"
                     android:textStyle="bold"
+                    android:visibility="gone"
                     tools:text="Last message in chat"/>
 
             </LinearLayout>
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/userProfileImageInChat"
+                android:id="@+id/roomStatusImage"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_centerVertical="true"
                 android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
                 android:src="@drawable/ic_check" />
         </RelativeLayout>
     </LinearLayout>

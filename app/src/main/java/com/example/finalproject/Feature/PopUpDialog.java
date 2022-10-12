@@ -6,6 +6,7 @@ import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -77,14 +78,14 @@ public class PopUpDialog extends DialogFragment {
         ((TextView)getView().findViewById(R.id.popUpDialogTitle)).setText(title);
         ((TextView)getView().findViewById(R.id.popUpDialogDesc)).setText(description);
 
-        TextView naturalBtn = getView().findViewById(R.id.popUpNaturalBtn);
+        Button naturalBtn = getView().findViewById(R.id.popUpNaturalBtn);
         naturalBtn.setText(naturalText);
         naturalBtn.setOnClickListener(v->{
             listener.onNaturalBtnClick();
             dismiss();
         });
 
-        TextView negativeBtn = getView().findViewById(R.id.popUpNegativeBtn);
+        Button negativeBtn = getView().findViewById(R.id.popUpNegativeBtn);
         negativeBtn.setText(negativeText);
         negativeBtn.setOnClickListener(v->{
             listener.onNegativeBtnClick();

@@ -6,12 +6,14 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.finalproject.Firebase.Authentication;
 import com.example.finalproject.Instance.Message;
 import com.example.finalproject.Instance.Room;
 import com.example.finalproject.R;
@@ -20,7 +22,7 @@ import java.util.List;
 
 interface ItemTouchHelperAdapter { void OnItemSwiped(int i_Position); }
 
-public class RoomsAdapter extends RecyclerView.Adapter<RoomsAdapter.ConversationViewHolder>
+public class RoomsAdapter extends RecyclerView.Adapter<RoomsAdapter.RoomViewHolder>
         implements ItemTouchHelperAdapter{
 
     private static MyRoomListener myRoomListener;
@@ -33,7 +35,9 @@ public class RoomsAdapter extends RecyclerView.Adapter<RoomsAdapter.Conversation
         //MainActivity.m_DeleteDialog.show();
     }
 
-    public interface MyRoomListener { void onRoomClicked(int adapterPosition);  }
+    public interface MyRoomListener {
+        void onRoomClicked(Room clickedRoom, TextView ownerName, ImageView roomStatusImage);
+    }
 
     public static void setMyRoomListener(MyRoomListener iRoomListener) {
         myRoomListener = iRoomListener;
@@ -45,9 +49,9 @@ public class RoomsAdapter extends RecyclerView.Adapter<RoomsAdapter.Conversation
 
     @NonNull
     @Override
-    public ConversationViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RoomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.room_cell,parent,false);
-        ConversationViewHolder ViewHolder = new ConversationViewHolder(view);
+        RoomViewHolder ViewHolder = new RoomViewHolder(view);
 
         m_Context = parent.getContext();
 
@@ -55,33 +59,29 @@ public class RoomsAdapter extends RecyclerView.Adapter<RoomsAdapter.Conversation
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ConversationViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RoomViewHolder holder, int position) {
         Room currentRoom = mRooms.get(position);
 
         holder.roomNumber.setText(currentRoom.getRoomNumber()+", "+currentRoom.getRoomFloor());
-        if(currentRoom.isAvailable())
-        {
-            holder.roomOwner.setText(currentRoom.getOwner().getUserFullName());
-        }
-        else{
-            holder.roomOwner.setVisibility(View.GONE); //or message like room is free
-        }
+        holder.roomOwner.setText(R.string.roomReservedBy+" "+ Authentication.getLoggedInUser().getUserFullName());
     }
 
     @Override
     public int getItemCount() { return mRooms.size();  }
 
-    protected class ConversationViewHolder extends RecyclerView.ViewHolder
+    protected class RoomViewHolder extends RecyclerView.ViewHolder
             implements GestureDetector.OnGestureListener{
 
         TextView roomNumber, roomOwner;
+        ImageView roomStatusImage;
         private GestureDetector gestureDetector;
 
-        public ConversationViewHolder(@NonNull View itemView) {
+        public RoomViewHolder(@NonNull View itemView) {
             super(itemView);
 
             roomNumber=itemView.findViewById(R.id.roomNumber);
             roomOwner=itemView.findViewById(R.id.roomOwnerName);
+            roomStatusImage=itemView.findViewById(R.id.roomStatusImage);
             gestureDetector = new GestureDetector(itemView.getContext(), this);
 
             itemView.setOnTouchListener(new View.OnTouchListener() {
@@ -101,12 +101,13 @@ public class RoomsAdapter extends RecyclerView.Adapter<RoomsAdapter.Conversation
 
         @Override
         public void onShowPress(MotionEvent motionEvent) {
-
         }
 
         @Override
         public boolean onSingleTapUp(MotionEvent motionEvent) {
-            if (myRoomListener != null){ myRoomListener.onRoomClicked(getAdapterPosition()); }
+            if (myRoomListener != null){
+                myRoomListener.onRoomClicked(mRooms.get(getAdapterPosition()),roomOwner,roomStatusImage);
+            }
 
             return true;
         }

@@ -66,7 +66,7 @@ public class LoginFragment extends Fragment{
                     @Override
                     public void onComplete(@NonNull Task task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(mView.getContext(), "great", Toast.LENGTH_SHORT).show();
+                            Authentication.setLoggedInUser(mSignInUser);
                             Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_profileFragment2);
                         }else{
                             Toast.makeText(mView.getContext(),task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -86,7 +86,6 @@ public class LoginFragment extends Fragment{
     }
 
     private void validationDetails(){
-
         String userEmail = userEmailEt.getText().toString(),
                 userPassword = userPasswordEt.getText().toString();
 

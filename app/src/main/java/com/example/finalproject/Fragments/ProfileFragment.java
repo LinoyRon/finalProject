@@ -37,9 +37,7 @@ public class ProfileFragment extends Fragment {
         emailTv = view.findViewById(R.id.outputEmail);
         userImageView = view.findViewById(R.id.userImageView);
 
-        if(Authentication.getFirebaseUser()!=null){
-            fullNameTv.setText(Authentication.getFirebaseUser().getDisplayName());
-        }
+        fullNameTv.setText(Authentication.getLoggedInUser().getUserFullName());
     }
 
     @Nullable

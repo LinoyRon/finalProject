@@ -5,22 +5,22 @@
     android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/header_setting"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:gravity="right"
-        android:id="@+id/header_setting">
+        android:orientation="horizontal">
 
-        <Toolbar
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:id="@+id/roomSettingToolBar"
-            android:background="@drawable/ic_settings" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/temp"/>
 
     </LinearLayout>
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/roomsRecyclerview"
+        android:layout_margin="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/header_setting"/>

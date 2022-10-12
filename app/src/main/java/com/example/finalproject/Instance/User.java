@@ -20,8 +20,8 @@ public class User implements Parcelable {
     }
 
     public User(String email, String password) {
-        FirstName="Lino";
-        LastName="Ron";
+        FirstName=" ";
+        LastName=" ";
         Email = email.trim();
         Password = password.trim();
         this.isAdmin = false;

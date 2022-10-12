@@ -1,15 +1,19 @@
 package com.example.finalproject.Instance;
 
+import com.example.finalproject.Firebase.Authentication;
+
 public class Room {
     String mRoomNumber, mRoomFloor;
     User mOwner;
     Boolean isAvailable;
 
+    public Room() {}
+
     public Room(String mRoomNumber, String mRoomFloor) {
         this.mRoomNumber = mRoomNumber;
         this.mRoomFloor = mRoomFloor;
-        this.mOwner = null;
-        this.isAvailable = false;
+        this.mOwner = Authentication.getLoggedInUser();
+        this.isAvailable = true;
     }
 
     public String getRoomNumber() {
@@ -24,9 +28,8 @@ public class Room {
         return mOwner;
     }
 
-    public void setOwner(User iRoomOwner) {
-        this.isAvailable = true;
-        mOwner=iRoomOwner;
+    public void setAvailable(Boolean isAvailable) {
+        this.isAvailable = isAvailable;
     }
 
     public Boolean isAvailable() {

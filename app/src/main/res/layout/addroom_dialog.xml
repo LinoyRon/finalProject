@@ -25,26 +25,35 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/popUpDialogTitle"
                 style="@style/Bold19White"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/background_pop_up"
                 android:gravity="center"
                 android:paddingVertical="23dp"
-                tools:text="Main title" />
+                tools:text="@string/addRoomTitle" />
 
-            <TextView
-                android:id="@+id/popUpDialogDesc"
+            <EditText
+                android:id="@+id/addRoomNumber"
                 style="@style/Reg17Black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="23dp"
-                android:gravity="center"
-                android:lineSpacingExtra="9dp"
-                android:paddingHorizontal="23dp"
-                android:paddingBottom="50dp"
-                tools:text="some thing in the description" />
+                android:layout_margin="10dp"
+                android:hint="@string/roomNumber" />
+
+            <EditText
+                android:id="@+id/addRoomFloor"
+                style="@style/Reg17Black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="@string/roomFloor" />
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/addRoomProgressBar"
+                android:visibility="invisible"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -57,7 +66,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:id="@+id/popUpNaturalBtn"
+                    android:text="@string/add"
+                    android:id="@+id/addRoomNaturalBtn"
                     android:background="@drawable/btn_rectangle_primary"/>
 
                 <View
@@ -69,7 +79,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:id="@+id/popUpNegativeBtn"
+                    android:text="@string/cancel"
+                    android:id="@+id/addRoomNegativeBtn"
                     android:background="@drawable/btn_rectangle_primary"/>
             </LinearLayout>
         </LinearLayout>

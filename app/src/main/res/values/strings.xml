@@ -11,4 +11,16 @@
     <string name="search">Search</string>
     <string name="setting">Settings</string>
     <string name="type">Type a message...</string>
+    <string name="reserveRoomTitel">Reserve The Room</string>
+    <string name="reserveRoomDescribtion">Whould you like to reserve the room?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="roomReservedBy">Room reserved by</string>
+    <string name="freeRoomTitel">Release the room</string>
+    <string name="freeRoomDescribtion">Whould you like to release the room?</string>
+    <string name="addRoomTitle">Add Room</string>
+    <string name="roomNumber">Room number</string>
+    <string name="roomFloor">Room Floor</string>
+    <string name="add">Add</string>
+    <string name="cancel">Cancel</string>
 </resources>

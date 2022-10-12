@@ -12,4 +12,16 @@
     <string name="chat">צ\'אט</string>
     <string name="profile">פרופיל</string>
     <string name="calender">לוח שנה</string>
+    <string name="reserveRoomTitel">שריין את החדר</string>
+    <string name="reserveRoomDescribtion">האם תרצה לשריין את החדר עבורך?</string>
+    <string name="yes">כן</string>
+    <string name="no">לא</string>
+    <string name="roomReservedBy">החדר מוזמן ע\"י</string>
+    <string name="freeRoomTitel">שחרר את החדר</string>
+    <string name="freeRoomDescribtion">האם תרצה לשחרר את החדר?</string>
+    <string name="add">הוסף</string>
+    <string name="roomNumber">מספר חדר</string>
+    <string name="roomFloor">קומה</string>
+    <string name="addRoomTitle">הוסף חדר</string>
+    <string name="cancel">ביטול</string>
 </resources>
