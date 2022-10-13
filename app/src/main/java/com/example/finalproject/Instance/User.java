@@ -6,8 +6,10 @@ import android.os.Parcelable;
 
 import androidx.annotation.RequiresApi;
 
+import com.example.finalproject.Firebase.Authentication;
+
 public class User implements Parcelable {
-    private String Email, Password, PhotoPath, FirstName, LastName, Token;
+    private String Email, Password, PhotoPath, FirstName, LastName, ID;
     Boolean isAdmin;
 
     public User() {
@@ -25,10 +27,19 @@ public class User implements Parcelable {
     public User(String email, String password) {
         FirstName="Testing";
         LastName="Testing";
+        ID= Authentication.getInstance().getFirebaseUser().getUid();
         Email = email.trim();
         Password = password.trim();
         this.isAdmin = false;
         PhotoPath="https://i2.wp.com/www.siasat.com/wp-content/uploads/2018/03/Rosamund-Pike.jpeg?fit=600%2C421&ssl=1";
+    }
+
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
     }
 
     public String getEmail() {
@@ -77,13 +88,13 @@ public class User implements Parcelable {
 
     @RequiresApi(api = Build.VERSION_CODES.Q)
     protected User(Parcel in) {
-        Token = in.readString();
+        ID = in.readString();
         Email = in.readString();
         Password = in.readString();
         FirstName = in.readString();
         LastName = in.readString();
         PhotoPath = in.readString();
-      //  isAdmin =  in.readBoolean();
+        isAdmin =  in.readBoolean();
     }
 
     public static final Parcelable.Creator<User> CREATOR
@@ -107,12 +118,12 @@ public class User implements Parcelable {
     @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
     public void writeToParcel(Parcel dest, int i) {
-        dest.writeString(Token);
+        dest.writeString(ID);
         dest.writeString(Email);
         dest.writeString(Password);
         dest.writeString(FirstName);
         dest.writeString(LastName);
         dest.writeString(PhotoPath);
-//        dest.writeBoolean(isAdmin);
+        dest.writeBoolean(isAdmin);
     }
 }

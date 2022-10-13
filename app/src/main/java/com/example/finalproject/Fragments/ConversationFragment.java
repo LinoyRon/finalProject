@@ -6,14 +6,17 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.finalproject.ConversationLogic.ConversationAdapter;
 import com.example.finalproject.ConversationLogic.ConversationManager;
+import com.example.finalproject.Features.ChatActivity;
 import com.example.finalproject.Instance.Conversation;
 import com.example.finalproject.Instance.User;
 import com.example.finalproject.R;
@@ -21,7 +24,8 @@ import com.example.finalproject.R;
 public class ConversationFragment extends Fragment {
 
     View myView;
-    private RecyclerView myConverationRecyclerView;
+    RecyclerView myConversationRecyclerView;
+    EditText mSearch;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -38,14 +42,22 @@ public class ConversationFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         myView = inflater.inflate(R.layout.fragment_conversation, container, false);
         setRecyclerView();
+        setSearchView();
+
+
         return myView;
     }
 
+    private void setSearchView() {
+        mSearch=myView.findViewById(R.id.searchEditText);
+
+    }
+
     private void setRecyclerView(){
-        myConverationRecyclerView = myView.findViewById(R.id.chatRecyclerview);
-        myConverationRecyclerView.setHasFixedSize(true);
-        myConverationRecyclerView.setLayoutManager(new LinearLayoutManager(myView.getContext()));
-        myConverationRecyclerView.setAdapter(new ConversationManager(getConversationAdapterListener()).getConversationAdapter());
+        myConversationRecyclerView = myView.findViewById(R.id.chatRecyclerview);
+        myConversationRecyclerView.setHasFixedSize(true);
+        myConversationRecyclerView.setLayoutManager(new LinearLayoutManager(myView.getContext()));
+        myConversationRecyclerView.setAdapter(new ConversationManager(getConversationAdapterListener()).getConversationAdapter());
     }
 
     private ConversationAdapter.ConversationAdapterListener getConversationAdapterListener() {
@@ -58,7 +70,7 @@ public class ConversationFragment extends Fragment {
     }
 
     private void openChatActivity(String iChatId, User iUser) {
-        Intent intent = new Intent(getActivity(), com.example.finalproject.Activities.ChatActivity.class);
+        Intent intent = new Intent(getActivity(), ChatActivity.class);
         intent.putExtra("CONVERSATION_ID", iChatId);
         intent.putExtra("USER", iUser);
         startActivity(intent);

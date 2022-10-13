@@ -10,7 +10,7 @@ public class Room {
     public Room() {}
 
     public Room(String mRoomNumber, String mRoomFloor) {
-        Owner = Authentication.getLoggedInUser();
+        Owner = Authentication.getInstance().getLoggedInUser();
         isAvailable = true;
         RoomNumber = mRoomNumber.trim();
         RoomFloor = mRoomFloor.trim();

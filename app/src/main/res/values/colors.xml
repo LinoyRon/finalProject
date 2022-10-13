@@ -4,10 +4,12 @@
     <color name="colorAccent">#E3B48A</color>
 
     <color name="colorPrimary">#254573</color>
-    <color name="colorPrimaryDark">#FFBB86FC</color>
-    <color name="colorPrimaryDarkSecond">#e96eb3</color>
+    <color name="colorPrimaryDark">#ad4de6</color>
+    <color name="purple">#D37C5295</color>
+    <color name="centerPurple">#D2DD44BD</color>
+    <color name="colorPrimaryDarkSecond">#FF8FB1</color>
     <color name="headline">#89909c</color>
-    <color name="LightHeadline">#d5d5d5</color>
+    <color name="LightHeadline">#B0D5D5D5</color>
     <color name="colorPrimary50">#809A82B1</color>
 
     <color name="transparent">#00000000</color>

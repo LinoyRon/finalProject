@@ -53,15 +53,12 @@ public class RegistrationFragment extends Fragment{
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 validationDetails();
-                Authentication.SignUp(mRegisterUser, new OnCompleteListener() {
+                Authentication.getInstance().SignUp(mRegisterUser, new OnCompleteListener() {
                     @Override
                     public void onComplete(@NonNull Task task) {
-                        if(task.isSuccessful()){
-                            Toast.makeText(mView.getContext(), "great", Toast.LENGTH_SHORT).show();
-                        }else{
-                            Toast.makeText(mView.getContext(), "Shit", Toast.LENGTH_SHORT).show();
+                        if(!task.isSuccessful()){
+                            Toast.makeText(mView.getContext(), task.getException().getMessage().toString(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

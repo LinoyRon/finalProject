@@ -26,4 +26,15 @@
     <string name="deleteDialogTitel">Delete Room</string>
     <string name="deleteDialogDescribation">Are you sure you want to delete this room?</string>
     <string name="roomRemoved">Room removed successfully</string>
+    <string name="number">Number</string>
+    <string name="floor">Floor</string>
+    <string name="undo">Undo</string>
+    <string name="firstName">First name</string>
+    <string name="lastName">Last name</string>
+    <string name="resetPassword">Reset Password</string>
+    <string name="send">Send</string>
+    <string name="pleaseEmail">Please fill you email:</string>
+    <string name="resetDescribtion">Reset password link will be send to your email.</string>
+    <string name="emailRequired">Email is required!</string>
+    <string name="resetSent">Reset link sent to your email</string>
 </resources>

@@ -7,7 +7,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,7 +14,6 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.finalproject.Firebase.Authentication;
-import com.example.finalproject.Instance.Message;
 import com.example.finalproject.Instance.Room;
 import com.example.finalproject.R;
 
@@ -28,15 +26,13 @@ public class RoomsAdapter extends RecyclerView.Adapter<RoomsAdapter.RoomViewHold
 
     private static MyRoomListener myRoomListener;
     ItemTouchHelper mItemTouchHelper;
-    private List<Room> mRooms;
+    private final List<Room> mRooms;
     Context mContext;
 
     public void SetTouchHelper(ItemTouchHelper iItemTouchHelper) { mItemTouchHelper = iItemTouchHelper; }
 
     @Override
     public void OnItemSwiped(int iPosition) {
-        //MainActivity.m_DeleteDialog.setPosition(i_Position);
-        //MainActivity.m_DeleteDialog.show();
         myRoomListener.onRoomSwiped(RoomsManager.getInstance().getRoomsList().get(iPosition));
     }
 
@@ -68,8 +64,9 @@ public class RoomsAdapter extends RecyclerView.Adapter<RoomsAdapter.RoomViewHold
     public void onBindViewHolder(@NonNull RoomViewHolder holder, int position) {
         Room currentRoom = mRooms.get(position);
 
-        holder.roomNumber.setText(currentRoom.getRoomNumber()+", "+currentRoom.getRoomFloor());
-        holder.roomOwner.setText(mContext.getResources().getString(R.string.roomReservedBy)+" "+ Authentication.getLoggedInUser().getUserFullName());
+        holder.roomNumber.setText(mContext.getResources().getString(R.string.roomNumber)+" "+currentRoom.getRoomNumber()+",");
+        holder.roomFloor.setText(mContext.getResources().getString(R.string.floor)+" "+currentRoom.getRoomFloor());
+        holder.roomOwner.setText(mContext.getResources().getString(R.string.roomReservedBy)+" "+ Authentication.getInstance().getLoggedInUser().getUserFullName());
     }
 
     @Override
@@ -78,14 +75,15 @@ public class RoomsAdapter extends RecyclerView.Adapter<RoomsAdapter.RoomViewHold
     protected class RoomViewHolder extends RecyclerView.ViewHolder
             implements GestureDetector.OnGestureListener{
 
-        TextView roomNumber, roomOwner;
+        TextView roomNumber, roomFloor, roomOwner;
         ImageView roomStatusImage;
-        private GestureDetector gestureDetector;
+        private final GestureDetector gestureDetector;
 
         public RoomViewHolder(@NonNull View itemView) {
             super(itemView);
 
             roomNumber=itemView.findViewById(R.id.roomNumber);
+            roomFloor=itemView.findViewById(R.id.roomFloor);
             roomOwner=itemView.findViewById(R.id.roomOwnerName);
             roomStatusImage=itemView.findViewById(R.id.roomStatusImage);
             gestureDetector = new GestureDetector(itemView.getContext(), this);
@@ -124,9 +122,7 @@ public class RoomsAdapter extends RecyclerView.Adapter<RoomsAdapter.RoomViewHold
         }
 
         @Override
-        public void onLongPress(MotionEvent motionEvent) {
-
-        }
+        public void onLongPress(MotionEvent motionEvent) {}
 
         @Override
         public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent1, float v, float v1) {

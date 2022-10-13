@@ -14,7 +14,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
 
 import com.example.finalproject.Firebase.Authentication;
 import com.example.finalproject.Instance.User;
@@ -62,14 +61,12 @@ public class LoginFragment extends Fragment{
                 myProgressBar.setVisibility(View.VISIBLE);
                 validationDetails();
 
-                Authentication.LogIn(mSignInUser, new OnCompleteListener() {
+                Authentication.getInstance().LogIn(mSignInUser, new OnCompleteListener() {
                     @Override
                     public void onComplete(@NonNull Task task) {
 
-                        Toast.makeText(mView.getContext(),mSignInUser.getUserFullName(), Toast.LENGTH_SHORT).show();
-
                         if(task.isSuccessful()){
-                            Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_profileFragment2);
+                           //Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_profileFragment2);
                         }else{
                             Toast.makeText(mView.getContext(),task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }

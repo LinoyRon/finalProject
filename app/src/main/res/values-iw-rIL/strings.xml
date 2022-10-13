@@ -27,4 +27,15 @@
     <string name="deleteDialogTitel">הסר חדר</string>
     <string name="deleteDialogDescribation">האם תרצה להסיר את החדר?</string>
     <string name="roomRemoved">החדר הוסר בהצלחה</string>
+    <string name="number">מספר</string>
+    <string name="floor">קומה</string>
+    <string name="undo">ביטול</string>
+    <string name="firstName">שם פרטי</string>
+    <string name="lastName">שם משפחה</string>
+    <string name="resetPassword">אתחול סיסמה</string>
+    <string name="send">שלח</string>
+    <string name="pleaseEmail">בבקשה מלא את כתובת המייל שלך:</string>
+    <string name="resetDescribtion">לינק לאתחול סיסמה ישלח לכתובת המייל שלך.</string>
+    <string name="emailRequired">נדרש למלא איימיל!</string>
+    <string name="resetSent">לינק אתחול סיסמה נשלח למייל שלך</string>
 </resources>

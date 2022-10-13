@@ -1,9 +1,10 @@
-package com.example.finalproject.Feature;
+package com.example.finalproject.Features;
 
 import android.content.Context;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -11,9 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.finalproject.Firebase.RoomsRepository;
 import com.example.finalproject.Instance.Room;
-import com.example.finalproject.Instance.User;
 import com.example.finalproject.R;
 import com.example.finalproject.RoomsLogic.RoomsManager;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,6 +25,7 @@ public class AddRoomDialog{
     AlertDialog mDialog;
     View mView;
     Button mNaturalBtn, mNegativeBtn;
+    ImageButton mExitBtn;
     EditText mRoomNumber, mRoomFloor;
     ProgressBar mProgressBar;
 
@@ -46,13 +46,18 @@ public class AddRoomDialog{
         mRoomNumber = mView.findViewById(R.id.addRoomNumber);
         mRoomFloor = mView.findViewById(R.id.addRoomFloor);
         mProgressBar = mView.findViewById(R.id.addRoomProgressBar);
+        mExitBtn = mView.findViewById(R.id.exitBtnAddRoom);
 
-        mNegativeBtn.setOnClickListener(new View.OnClickListener() {
+        View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mDialog.dismiss();
             }
-        });
+        };
+
+        mExitBtn.setOnClickListener(onClickListener);
+        mNegativeBtn.setOnClickListener(onClickListener);
+
         mNaturalBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,11 +78,8 @@ public class AddRoomDialog{
         RoomsManager.getInstance().getRoomsRepository().AddRoom(iRoomToAdd, new OnCompleteListener() {
             @Override
             public void onComplete(@NonNull Task task) {
-                if(task.isSuccessful()){
-                    Toast.makeText(mContext,"fuck great", Toast.LENGTH_SHORT).show();
-                }else {
-                    Toast.makeText(mContext, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                }
+                if(!task.isSuccessful()){
+                    Toast.makeText(mContext, task.getException().getMessage(), Toast.LENGTH_SHORT).show();}
             }
         });
 

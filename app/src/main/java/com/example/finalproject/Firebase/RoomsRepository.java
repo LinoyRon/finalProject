@@ -12,7 +12,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class RoomsRepository {
     FirebaseDatabase mDatabase;
@@ -26,7 +25,6 @@ public class RoomsRepository {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 mRoomList.clear();
-                HashMap hashMap = new HashMap();
 
                 for(DataSnapshot dateSnapshot: snapshot.getChildren()){
                     Room room = dateSnapshot.getValue(Room.class);
@@ -43,11 +41,11 @@ public class RoomsRepository {
 
     public void AddRoom(Room iRoomToAdd, OnCompleteListener onCompleteListener){
         mDatabaseReference.child(iRoomToAdd.getRoomNumber()).setValue(iRoomToAdd).addOnCompleteListener(onCompleteListener);
-        //FirebaseDatabase.getInstance().getReference("rooms").child(iRoomToAdd.getRoomNumber()).setValue(iRoomToAdd);
     }
 
     public void RemoveRoom(Room iRoomToRemove, OnCompleteListener onCompleteListener){
         mRoomList.remove(iRoomToRemove);
+        RoomsManager.getInstance().getRoomAdapter().notifyDataSetChanged();
         mDatabaseReference.child(iRoomToRemove.getRoomNumber()).setValue(null).addOnCompleteListener(onCompleteListener);
     }
 

@@ -32,13 +32,12 @@ public class ProfileFragment extends Fragment {
     }
 
     private void initializeViews(){
-
         fullNameTv = view.findViewById(R.id.outputFullName);
         emailTv = view.findViewById(R.id.outputEmail);
         userImageView = view.findViewById(R.id.userImageView);
 
-        fullNameTv.setText(Authentication.getLoggedInUser().getUserFullName());
-        emailTv.setText(Authentication.getLoggedInUser().getEmail());
+        fullNameTv.setText(Authentication.getInstance().getLoggedInUser().getUserFullName());
+        emailTv.setText(Authentication.getInstance().getLoggedInUser().getEmail());
     }
 
     @Nullable

@@ -3,18 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_main"
-    app:startDestination="@id/loginFragment">
-
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.example.finalproject.Fragments.LoginFragment"
-        android:label="LoginFragment"
-        tools:layout="@layout/fragment_login">
-
-        <action
-            android:id="@+id/action_loginFragment_to_profileFragment2"
-            app:destination="@id/profileFragment" />
-    </fragment>
+    app:startDestination="@id/profileFragment">
 
     <fragment
         android:id="@+id/conversationFragment"
@@ -24,9 +13,14 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.finalproject.Fragments.ProfileFragment"
-        android:label="ProfileFragment" />
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile"/>
     <fragment
         android:id="@+id/roomsFragment"
         android:name="com.example.finalproject.Fragments.RoomsFragment"
         android:label="RoomsFragment" />
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.example.finalproject.Fragments.RegistrationFragment"
+        android:label="RegistrationFragment" />
 </navigation>

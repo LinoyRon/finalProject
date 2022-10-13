@@ -4,6 +4,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="60dp"/>
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,7 +18,7 @@
         android:padding="10dp"
         android:paddingStart="20dp"
         android:hint="@string/search"
-        android:textColor="@color/black"
+        style="@style/Bold15Black"
         android:drawablePadding="10dp"/>
 
     <androidx.recyclerview.widget.RecyclerView

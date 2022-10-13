@@ -1,8 +1,6 @@
 package com.example.finalproject.Fragments;
 
-import android.app.GameManager;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,16 +13,12 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.finalproject.ConversationLogic.ConversationManager;
-import com.example.finalproject.Feature.AddRoomDialog;
+import com.example.finalproject.Features.AddRoomDialog;
 import com.example.finalproject.Feature.PopUpDialog;
-import com.example.finalproject.Firebase.Authentication;
-import com.example.finalproject.Firebase.RoomsRepository;
+import com.example.finalproject.Feature.PopUpDialog.PopUpDialogListener;
 import com.example.finalproject.Instance.Room;
 import com.example.finalproject.R;
 import com.example.finalproject.RoomsLogic.MyItemTouchHelper;
@@ -32,14 +26,7 @@ import com.example.finalproject.RoomsLogic.RoomsAdapter;
 import com.example.finalproject.RoomsLogic.RoomsManager;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.AbstractCollection;
-import java.util.ArrayList;
+import com.google.android.material.snackbar.Snackbar;
 
 public class RoomsFragment extends Fragment {
 
@@ -90,7 +77,7 @@ public class RoomsFragment extends Fragment {
             @Override
             public void onRoomClicked(Room clickedRoom, TextView ownerName, ImageView roomStatusImage) {
                 if(clickedRoom.getAvailable()){
-                    PopUpDialog.PopUpDialogListener Listener = new PopUpDialog.PopUpDialogListener() {
+                    PopUpDialogListener Listener = new PopUpDialog.PopUpDialogListener() {
                         @Override
                         public void onNaturalBtnClick() {//reserve the room
                             ownerName.setVisibility(View.VISIBLE);
@@ -129,19 +116,16 @@ public class RoomsFragment extends Fragment {
 
             @Override
             public void onRoomSwiped(Room iRoomToRemove) {
-
-                Toast.makeText(myView.getContext(),iRoomToRemove.getRoomNumber()+"",Toast.LENGTH_LONG).show();
-
                 PopUpDialog.PopUpDialogListener Listener = new PopUpDialog.PopUpDialogListener() {
                     @Override
-                    public void onNaturalBtnClick() {//reserve the room
+                    public void onNaturalBtnClick() {
+                        int iPosition = RoomsManager.getInstance().getRoomsList().indexOf(iRoomToRemove);
 
                         RoomsManager.getInstance().getRoomsRepository().RemoveRoom(iRoomToRemove, new OnCompleteListener() {
                             @Override
                             public void onComplete(@NonNull Task task) {
                                 if(task.isSuccessful()){
-                                    RoomsManager.getInstance().getRoomAdapter().notifyDataSetChanged();
-                                    Toast.makeText(myView.getContext(),R.string.roomRemoved, Toast.LENGTH_SHORT).show();
+                                    undoDelete(iRoomToRemove, iPosition);
                                 }else{
                                     Toast.makeText(myView.getContext(),task.getException().getMessage().toString(), Toast.LENGTH_SHORT).show();
                                 }
@@ -161,5 +145,24 @@ public class RoomsFragment extends Fragment {
         });
 
         myRoomRecyclerView.setAdapter(RoomsManager.getInstance().getRoomAdapter());
+    }
+
+    private void undoDelete(Room iRemovedRoom, int iRoomPosition) {
+        Snackbar.make(myView,R.string.roomRemoved, Snackbar.LENGTH_LONG).setAction(R.string.undo, new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                RoomsManager.getInstance().getRoomsList().add(iRoomPosition, iRemovedRoom);
+                RoomsManager.getInstance().getRoomAdapter().notifyItemInserted(iRoomPosition);
+                RoomsManager.getInstance().getRoomsRepository().AddRoom(iRemovedRoom, new OnCompleteListener() {
+                    @Override
+                    public void onComplete(@NonNull Task task) {
+                        if(!task.isSuccessful()){
+                            Toast.makeText(myView.getContext(),task.getException().getMessage().toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+            }
+        }).show();
     }
 }

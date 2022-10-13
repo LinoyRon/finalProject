@@ -1,5 +1,6 @@
 package com.example.finalproject.ConversationLogic;
 
+import com.example.finalproject.Firebase.Authentication;
 import com.example.finalproject.Instance.Conversation;
 import com.example.finalproject.Instance.User;
 
@@ -22,17 +23,10 @@ public class ConversationManager {
 
     private void initListTemp(){
         mChattingUsers=new ArrayList<>();
+        ArrayList<User> mUsers = Authentication.getInstance().getUsersRepository().getUsersList();
 
-        mChattingUsers.add(new Conversation("123",new User("linoy@gamil.com", "12345678")));
-        mChattingUsers.add(new Conversation("123",new User("linoy@gamil.com", "12345678")));
-        mChattingUsers.add(new Conversation("123",new User("linoy@gamil.com", "12345678")));
-        mChattingUsers.add(new Conversation("123",new User("linoy@gamil.com", "12345678")));
-        mChattingUsers.add(new Conversation("123",new User("linoy@gamil.com", "12345678")));
-        mChattingUsers.add(new Conversation("123",new User("linoy@gamil.com", "12345678")));
-        mChattingUsers.add(new Conversation("123",new User("linoy@gamil.com", "12345678")));
-        mChattingUsers.add(new Conversation("123",new User("linoy@gamil.com", "12345678")));
-        mChattingUsers.add(new Conversation("123",new User("linoy@gamil.com", "12345678")));
-        mChattingUsers.add(new Conversation("123",new User("linoy@gamil.com", "12345678")));
-        mChattingUsers.add(new Conversation("123",new User("linoy@gamil.com", "12345678")));
+        for (int i = 0; i < mUsers.size(); i++) {
+            mChattingUsers.add(new Conversation(i+"",mUsers.get(i)));
+        }
     }
 }
