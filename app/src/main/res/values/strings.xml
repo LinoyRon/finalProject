@@ -23,4 +23,7 @@
     <string name="roomFloor">Room Floor</string>
     <string name="add">Add</string>
     <string name="cancel">Cancel</string>
+    <string name="deleteDialogTitel">Delete Room</string>
+    <string name="deleteDialogDescribation">Are you sure you want to delete this room?</string>
+    <string name="roomRemoved">Room removed successfully</string>
 </resources>

@@ -12,6 +12,7 @@ public class Authentication {
     private static User mLoggedInUser = new User(" ", " ");
 
     public static void LogIn(User iLogUser, OnCompleteListener iOnCompleteListener){
+        mLoggedInUser = iLogUser;
         firebaseAuth.signInWithEmailAndPassword(iLogUser.getEmail(),iLogUser.getPassword()).addOnCompleteListener(iOnCompleteListener);
     }
 
@@ -25,9 +26,5 @@ public class Authentication {
 
     public static User getLoggedInUser() {
         return mLoggedInUser;
-    }
-
-    public static void setLoggedInUser(User mLoggedInUser) {
-        Authentication.mLoggedInUser = mLoggedInUser;
     }
 }

@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.finalproject.Firebase.Authentication;
@@ -26,17 +27,22 @@ public class RoomsAdapter extends RecyclerView.Adapter<RoomsAdapter.RoomViewHold
         implements ItemTouchHelperAdapter{
 
     private static MyRoomListener myRoomListener;
+    ItemTouchHelper mItemTouchHelper;
     private List<Room> mRooms;
-    Context m_Context;
+    Context mContext;
+
+    public void SetTouchHelper(ItemTouchHelper iItemTouchHelper) { mItemTouchHelper = iItemTouchHelper; }
 
     @Override
-    public void OnItemSwiped(int i_Position) {
+    public void OnItemSwiped(int iPosition) {
         //MainActivity.m_DeleteDialog.setPosition(i_Position);
         //MainActivity.m_DeleteDialog.show();
+        myRoomListener.onRoomSwiped(RoomsManager.getInstance().getRoomsList().get(iPosition));
     }
 
     public interface MyRoomListener {
         void onRoomClicked(Room clickedRoom, TextView ownerName, ImageView roomStatusImage);
+        void onRoomSwiped(Room iRoomToRemove);
     }
 
     public static void setMyRoomListener(MyRoomListener iRoomListener) {
@@ -53,7 +59,7 @@ public class RoomsAdapter extends RecyclerView.Adapter<RoomsAdapter.RoomViewHold
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.room_cell,parent,false);
         RoomViewHolder ViewHolder = new RoomViewHolder(view);
 
-        m_Context = parent.getContext();
+        mContext = parent.getContext();
 
         return ViewHolder;
     }
@@ -63,7 +69,7 @@ public class RoomsAdapter extends RecyclerView.Adapter<RoomsAdapter.RoomViewHold
         Room currentRoom = mRooms.get(position);
 
         holder.roomNumber.setText(currentRoom.getRoomNumber()+", "+currentRoom.getRoomFloor());
-        holder.roomOwner.setText(R.string.roomReservedBy+" "+ Authentication.getLoggedInUser().getUserFullName());
+        holder.roomOwner.setText(mContext.getResources().getString(R.string.roomReservedBy)+" "+ Authentication.getLoggedInUser().getUserFullName());
     }
 
     @Override

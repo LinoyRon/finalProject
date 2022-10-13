@@ -38,6 +38,7 @@ public class ProfileFragment extends Fragment {
         userImageView = view.findViewById(R.id.userImageView);
 
         fullNameTv.setText(Authentication.getLoggedInUser().getUserFullName());
+        emailTv.setText(Authentication.getLoggedInUser().getEmail());
     }
 
     @Nullable

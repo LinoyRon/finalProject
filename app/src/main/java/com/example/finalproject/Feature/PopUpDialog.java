@@ -25,7 +25,7 @@ public class PopUpDialog extends DialogFragment {
     PopUpDialogListener listener;
      public interface PopUpDialogListener extends Parcelable {
         void  onNaturalBtnClick();
-        void onNegativeBtnClick();
+        //void onNegativeBtnClick();
 
          @Override
          default int describeContents(){
@@ -88,7 +88,7 @@ public class PopUpDialog extends DialogFragment {
         Button negativeBtn = getView().findViewById(R.id.popUpNegativeBtn);
         negativeBtn.setText(negativeText);
         negativeBtn.setOnClickListener(v->{
-            listener.onNegativeBtnClick();
+            //listener.onNegativeBtnClick();
             dismiss();
         });
 

@@ -65,8 +65,10 @@ public class LoginFragment extends Fragment{
                 Authentication.LogIn(mSignInUser, new OnCompleteListener() {
                     @Override
                     public void onComplete(@NonNull Task task) {
+
+                        Toast.makeText(mView.getContext(),mSignInUser.getUserFullName(), Toast.LENGTH_SHORT).show();
+
                         if(task.isSuccessful()){
-                            Authentication.setLoggedInUser(mSignInUser);
                             Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_profileFragment2);
                         }else{
                             Toast.makeText(mView.getContext(),task.getException().getMessage(), Toast.LENGTH_SHORT).show();

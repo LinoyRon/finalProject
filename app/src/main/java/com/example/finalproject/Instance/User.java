@@ -10,6 +10,9 @@ public class User implements Parcelable {
     private String Email, Password, PhotoPath, FirstName, LastName, Token;
     Boolean isAdmin;
 
+    public User() {
+    }
+
     public User(String email, String password, String photoPath, String firstName, String lastName, Boolean isAdmin) {
         Email = email.trim();
         Password = password.trim();
@@ -20,8 +23,8 @@ public class User implements Parcelable {
     }
 
     public User(String email, String password) {
-        FirstName=" ";
-        LastName=" ";
+        FirstName="Testing";
+        LastName="Testing";
         Email = email.trim();
         Password = password.trim();
         this.isAdmin = false;

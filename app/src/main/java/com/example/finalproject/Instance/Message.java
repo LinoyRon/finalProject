@@ -6,6 +6,9 @@ public class Message {
     String mMessage;
     Boolean isSent=false;
 
+    public Message() {
+    }
+
     public Message(User mSender, User mReceiver, String mMessage) {
 
         this.mSender = mSender;

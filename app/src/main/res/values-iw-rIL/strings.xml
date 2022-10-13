@@ -24,4 +24,7 @@
     <string name="roomFloor">קומה</string>
     <string name="addRoomTitle">הוסף חדר</string>
     <string name="cancel">ביטול</string>
+    <string name="deleteDialogTitel">הסר חדר</string>
+    <string name="deleteDialogDescribation">האם תרצה להסיר את החדר?</string>
+    <string name="roomRemoved">החדר הוסר בהצלחה</string>
 </resources>

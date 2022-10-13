@@ -3,36 +3,48 @@ package com.example.finalproject.Instance;
 import com.example.finalproject.Firebase.Authentication;
 
 public class Room {
-    String mRoomNumber, mRoomFloor;
-    User mOwner;
+    String RoomNumber, RoomFloor;
+    User Owner;
     Boolean isAvailable;
 
     public Room() {}
 
     public Room(String mRoomNumber, String mRoomFloor) {
-        this.mRoomNumber = mRoomNumber;
-        this.mRoomFloor = mRoomFloor;
-        this.mOwner = Authentication.getLoggedInUser();
-        this.isAvailable = true;
+        Owner = Authentication.getLoggedInUser();
+        isAvailable = true;
+        RoomNumber = mRoomNumber.trim();
+        RoomFloor = mRoomFloor.trim();
     }
 
     public String getRoomNumber() {
-        return mRoomNumber;
+        return RoomNumber;
+    }
+
+    public void setRoomNumber(String roomNumber) {
+        RoomNumber = roomNumber;
     }
 
     public String getRoomFloor() {
-        return mRoomFloor;
+        return RoomFloor;
+    }
+
+    public void setRoomFloor(String roomFloor) {
+        RoomFloor = roomFloor;
     }
 
     public User getOwner() {
-        return mOwner;
+        return Owner;
     }
 
-    public void setAvailable(Boolean isAvailable) {
-        this.isAvailable = isAvailable;
+    public void setOwner(User owner) {
+        Owner = owner;
     }
 
-    public Boolean isAvailable() {
+    public Boolean getAvailable() {
         return isAvailable;
+    }
+
+    public void setAvailable(Boolean available) {
+        isAvailable = available;
     }
 }

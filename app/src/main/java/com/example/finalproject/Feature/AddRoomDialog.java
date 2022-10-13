@@ -85,7 +85,7 @@ public class AddRoomDialog{
     }
 
     private void checkValidation(){
-        Room roomToAdd=null;
+        Room roomToAdd = new Room("1", "12");
 
         String roomFloor = mRoomFloor.getText().toString(),
                 roomNumber = mRoomNumber.getText().toString();
