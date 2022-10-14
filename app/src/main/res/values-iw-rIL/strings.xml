@@ -38,4 +38,9 @@
     <string name="resetDescribtion">לינק לאתחול סיסמה ישלח לכתובת המייל שלך.</string>
     <string name="emailRequired">נדרש למלא איימיל!</string>
     <string name="resetSent">לינק אתחול סיסמה נשלח למייל שלך</string>
+    <string name="passwordReqired">נדרש למלא סיסמה!</string>
+    <string name="logout">התנתק</string>
+    <string name="askingauthorization">לתת הרשאות למשתמש ?</string>
+    <string name="userAdded">משתמש נוסף למערכת בהצלחה</string>
+    <string name="emptyMessagesError">לא ניתן לשלוח הודעה ריקה מתוכן</string>
 </resources>

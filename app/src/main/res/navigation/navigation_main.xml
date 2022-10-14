@@ -19,8 +19,4 @@
         android:id="@+id/roomsFragment"
         android:name="com.example.finalproject.Fragments.RoomsFragment"
         android:label="RoomsFragment" />
-    <fragment
-        android:id="@+id/registrationFragment"
-        android:name="com.example.finalproject.Fragments.RegistrationFragment"
-        android:label="RegistrationFragment" />
 </navigation>

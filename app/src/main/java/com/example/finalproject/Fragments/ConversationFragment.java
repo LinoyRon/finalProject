@@ -64,14 +64,14 @@ public class ConversationFragment extends Fragment {
         return new ConversationAdapter.ConversationAdapterListener() {
             @Override
             public void onConversationClick(Conversation iConversation) {
-                openChatActivity(iConversation.getConversationId(), iConversation.getChatPartner());
+                openChatActivity(iConversation.getConversationId(),iConversation.getCurrentUser(),iConversation.getChatPartner());
             }
         };
     }
 
-    private void openChatActivity(String iChatId, User iUser) {
+    private void openChatActivity(String iChatId, User iUser,User iPartnerChat) {
         Intent intent = new Intent(getActivity(), ChatActivity.class);
-        intent.putExtra("CONVERSATION_ID", iChatId);
+        intent.putExtra("PARTNER_CHAT", iPartnerChat);
         intent.putExtra("USER", iUser);
         startActivity(intent);
     }

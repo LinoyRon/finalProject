@@ -12,11 +12,12 @@
 
     <item android:state_pressed="false">
         <shape android:shape="rectangle">
-            <gradient android:startColor="@color/colorPrimary"
-                android:endColor="#828FB1"
+            <gradient android:startColor="@color/purple"
+                android:endColor="@color/colorPrimaryDark"
                 android:angle="180"/>
             <corners android:radius="20dp"/>
         </shape>
+
     </item>
     <item android:state_pressed="true">
         <shape android:shape="rectangle">

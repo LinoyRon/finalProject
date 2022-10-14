@@ -37,4 +37,9 @@
     <string name="resetDescribtion">Reset password link will be send to your email.</string>
     <string name="emailRequired">Email is required!</string>
     <string name="resetSent">Reset link sent to your email</string>
+    <string name="passwordReqired">Password is reqired!</string>
+    <string name="logout">Logout</string>
+    <string name="askingauthorization">Give authorization to this user ?</string>
+    <string name="userAdded">User added to the system successfully</string>
+    <string name="emptyMessagesError">Cannot send empty message</string>
 </resources>

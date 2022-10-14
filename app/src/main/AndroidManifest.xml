@@ -27,6 +27,7 @@
         </activity>
         <activity
             android:name=".FragmentsActivity"/>
+        <activity android:name=".Features.ChatActivity"/>
 
     </application>
 </manifest>

@@ -4,23 +4,23 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
+import com.example.finalproject.Firebase.Authentication;
 import com.example.finalproject.Instance.Message;
 import com.example.finalproject.R;
 
 import java.util.List;
+import java.util.Objects;
 
 public class MassageAdapter extends RecyclerView.Adapter<MassageAdapter.ConversationViewHolder> {
 
     private List<Message> mChatHistory;
+    private Message mCurrentMessage;
     Context m_Context;
 
     public MassageAdapter(List<Message> mChatHistory) {
@@ -40,15 +40,19 @@ public class MassageAdapter extends RecyclerView.Adapter<MassageAdapter.Conversa
 
     @Override
     public void onBindViewHolder(@NonNull ConversationViewHolder holder, int position) {
-        Message currentMessage = mChatHistory.get(position);
+        mCurrentMessage = mChatHistory.get(position);
 
-        if (currentMessage.getIsSent()) {
+        if(isLoggedInUserSendTheMessage()){
             holder.bindSentMessage();
         } else {
             holder.bindReceivedMessage();
         }
 
-        holder.massageContentTv.setText(currentMessage.getMessage());
+        holder.massageContentTv.setText(mCurrentMessage.getMessageContent());
+    }
+
+    private boolean isLoggedInUserSendTheMessage(){
+        return Objects.equals(Authentication.getInstance().getLoggedInUser().getID(), mCurrentMessage.getSender().getID());
     }
 
     @Override

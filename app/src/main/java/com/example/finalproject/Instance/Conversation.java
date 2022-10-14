@@ -1,30 +1,41 @@
 package com.example.finalproject.Instance;
 
+import com.example.finalproject.Firebase.Authentication;
+
 public class Conversation {
-    String mConversationId;
-    User mChatPartner;
+    String ConversationId;
+    User CurrentUser, ChatPartner;
 
     public Conversation() {
     }
 
-    public Conversation(String mConversationId, User mChatPartner) {
-        this.mConversationId = mConversationId;
-        this.mChatPartner = mChatPartner;
+    public Conversation(String ConversationId, User ChatPartner) {
+        this.ConversationId = ConversationId;
+        this.ChatPartner = ChatPartner;
+        CurrentUser = Authentication.getInstance().getLoggedInUser();
     }
 
     public String getConversationId() {
-        return mConversationId;
+        return ConversationId;
     }
 
-    public void setConversationId(String mConversationId) {
-        this.mConversationId = mConversationId;
+    public void setConversationId(String ConversationId) {
+        this.ConversationId = ConversationId;
     }
 
     public User getChatPartner() {
-        return mChatPartner;
+        return ChatPartner;
     }
 
-    public void setChatPartner(User mChatPartner) {
-        this.mChatPartner = mChatPartner;
+    public void setChatPartner(User ChatPartner) {
+        this.ChatPartner = ChatPartner;
+    }
+
+    public User getCurrentUser() {
+        return CurrentUser;
+    }
+
+    public void setCurrentUser(User CurrentUser) {
+        this.CurrentUser = CurrentUser;
     }
 }

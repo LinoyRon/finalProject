@@ -20,13 +20,13 @@ public class Authentication {
     public static Authentication getInstance() {  return mInstance;  }
 
     public void LogIn(User iLogUser, OnCompleteListener iOnCompleteListener) {
-        mLoggedInUser = iLogUser;
         firebaseAuth.signInWithEmailAndPassword(iLogUser.getEmail(), iLogUser.getPassword()).addOnCompleteListener(iOnCompleteListener);
+        mLoggedInUser = iLogUser;
     }
 
     public void SignUp(User iSignUser, OnCompleteListener iOnCompleteListener) {
         firebaseAuth.createUserWithEmailAndPassword(iSignUser.getEmail(), iSignUser.getPassword()).addOnCompleteListener(iOnCompleteListener);
-        mUsersRepository.AddUser(iSignUser,iOnCompleteListener);
+        iSignUser.setID(firebaseAuth.getCurrentUser().getUid());
     }
 
     public FirebaseUser getFirebaseUser() {
@@ -44,4 +44,6 @@ public class Authentication {
     public void ResetPassword(String iEmail, OnCompleteListener iOnCompleteListener){
         firebaseAuth.sendPasswordResetEmail(iEmail).addOnCompleteListener(iOnCompleteListener);
     }
+
+    public void LogOut(OnCompleteListener iOnCompleteListener) { FirebaseAuth.getInstance().signOut(); }
 }

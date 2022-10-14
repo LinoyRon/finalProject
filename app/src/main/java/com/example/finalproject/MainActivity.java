@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.finalproject.Features.ForgotPasswordDialog;
+import com.example.finalproject.Features.RegistrationDialog;
 import com.example.finalproject.Firebase.Authentication;
 import com.example.finalproject.Instance.User;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText userEmailEt, userPasswordEt;
     Button loginBtn;
-    TextView forgotPassword;
+    TextView forgotPassword, register;
     User mSignInUser;
     ProgressBar myProgressBar;
 
@@ -41,28 +42,21 @@ public class MainActivity extends AppCompatActivity {
         loginBtn = findViewById(R.id.btnLogin);
         forgotPassword = findViewById(R.id.forgotPassword);
         myProgressBar= findViewById(R.id.progressBar);
+        register = findViewById(R.id.registerToSystem);
+
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                RegistrationDialog registrationDialog = new RegistrationDialog(view.getContext());
+                registrationDialog.show();
+            }
+        });
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 myProgressBar.setVisibility(View.VISIBLE);
                 validationDetails();
-
-                Authentication.getInstance().LogIn(mSignInUser, new OnCompleteListener() {
-                    @Override
-                    public void onComplete(@NonNull Task task) {
-
-                        Toast.makeText(MainActivity.this,mSignInUser.getUserFullName(), Toast.LENGTH_SHORT).show();
-
-                        if(task.isSuccessful()){
-                            Intent intent = new Intent(MainActivity.this, FragmentsActivity.class);
-                            startActivity(intent);
-                        }else{
-                            Toast.makeText(MainActivity.this,task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                        myProgressBar.setVisibility(View.GONE);
-                    }
-                });
             }
         });
 
@@ -80,13 +74,33 @@ public class MainActivity extends AppCompatActivity {
                 userPassword = userPasswordEt.getText().toString();
 
         if(userEmail.isEmpty()){
-            userEmailEt.setError("email empty");
+            userEmailEt.setError(getResources().getString(R.string.emailRequired));
             userEmailEt.requestFocus();
         }
         else if(userPassword.isEmpty()){
-            userPasswordEt.setError("userPassword empty");
+            userPasswordEt.setError(getResources().getString(R.string.passwordReqired));
             userPasswordEt.requestFocus();
         }
-        else{mSignInUser = new User(userEmail, userPassword);}
+        else{mSignInUser = new User(userEmail, userPassword);
+            logIn();}
     }
+
+    private void logIn() {
+        Authentication.getInstance().LogIn(mSignInUser, new OnCompleteListener() {
+            @Override
+            public void onComplete(@NonNull Task task) {
+
+                if(task.isSuccessful()){
+                    Intent intent = new Intent(MainActivity.this, FragmentsActivity.class);
+                    startActivity(intent);
+                    finish();
+                }else{
+                    Toast.makeText(MainActivity.this,task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                }
+                myProgressBar.setVisibility(View.GONE);
+            }
+        });
+    }
+
+
 }

@@ -66,7 +66,7 @@ public class RoomsAdapter extends RecyclerView.Adapter<RoomsAdapter.RoomViewHold
 
         holder.roomNumber.setText(mContext.getResources().getString(R.string.roomNumber)+" "+currentRoom.getRoomNumber()+",");
         holder.roomFloor.setText(mContext.getResources().getString(R.string.floor)+" "+currentRoom.getRoomFloor());
-        holder.roomOwner.setText(mContext.getResources().getString(R.string.roomReservedBy)+" "+ Authentication.getInstance().getLoggedInUser().getUserFullName());
+        holder.roomOwner.setText(mContext.getResources().getString(R.string.roomReservedBy)+" "+ Authentication.getInstance().getLoggedInUser().getFullName());
     }
 
     @Override

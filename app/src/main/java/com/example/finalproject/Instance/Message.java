@@ -1,58 +1,51 @@
 package com.example.finalproject.Instance;
 
 public class Message {
-    String conversationId;
-    User mSender, mReceiver;
-    String mMessage;
-    Boolean isSent=false;
+    String MessageId, MessageContent;
+    User Sender, Receiver;
 
     public Message() {
     }
 
-    public Message(User mSender, User mReceiver, String mMessage) {
-
-        this.mSender = mSender;
-        this.mReceiver = mReceiver;
-        this.mMessage = mMessage;
+    public Message(User sender, User receiver, String messageContent) {
+        MessageContent = messageContent.trim();
+        Sender = sender;
+        Receiver = receiver;
     }
 
     public String getConversationId() {
-        return conversationId;
+        return MessageId;
     }
 
     public void setConversationId(String conversationId) {
-        this.conversationId = conversationId;
+        MessageId = conversationId;
+    }
+
+    public String getMessageContent() {
+        return MessageContent;
+    }
+
+    public void setMessageContent(String messageContent) {
+        MessageContent = messageContent;
     }
 
     public User getSender() {
-        return mSender;
+        return Sender;
     }
 
-    public void setSender(User mSender) {
-        this.mSender = mSender;
+    public void setSender(User sender) {
+        Sender = sender;
     }
 
     public User getReceiver() {
-        return mReceiver;
+        return Receiver;
     }
 
-    public void setReceiver(User mReceiver) {
-        this.mReceiver = mReceiver;
+    public void setReceiver(User receiver) {
+        Receiver = receiver;
     }
 
-    public String getMessage() {
-        return mMessage;
-    }
-
-    public void setMessage(String mMessage) {
-        this.mMessage = mMessage;
-    }
-
-    public Boolean getIsSent() {
-        return isSent;
-    }
-
-    public void setIsSent(Boolean sent) {
-        isSent = sent;
-    }
+    /* public Boolean IsSent() {
+        return Objects.equals(getReceiver().getID(), Authentication.getInstance().getLoggedInUser().getID());
+    }*/
 }
