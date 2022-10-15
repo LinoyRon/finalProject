@@ -44,8 +44,4 @@ public class Message {
     public void setReceiver(User receiver) {
         Receiver = receiver;
     }
-
-    /* public Boolean IsSent() {
-        return Objects.equals(getReceiver().getID(), Authentication.getInstance().getLoggedInUser().getID());
-    }*/
 }

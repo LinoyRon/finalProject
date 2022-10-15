@@ -42,4 +42,12 @@
     <string name="askingauthorization">Give authorization to this user ?</string>
     <string name="userAdded">User added to the system successfully</string>
     <string name="emptyMessagesError">Cannot send empty message</string>
+    <string name="addUser">Add user</string>
+    <string name="addPhoto">Add profile picture</string>
+    <string name="gallery">Gallery</string>
+    <string name="camera">Camera</string>
+    <string name="profileUpdate">Profile picture update successfully</string>
+    <string name="nameFirstReqierd">First name is reqierd</string>
+    <string name="nameLastReqierd">Last name is reqierd</string>
+    <string name="passwordLenght">Password must be at least 6 digits</string>
 </resources>

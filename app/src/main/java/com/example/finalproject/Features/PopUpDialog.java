@@ -1,4 +1,4 @@
-package com.example.finalproject.Feature;
+package com.example.finalproject.Features;
 
 import android.os.Bundle;
 import android.os.Parcel;
@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -25,7 +26,7 @@ public class PopUpDialog extends DialogFragment {
     PopUpDialogListener listener;
      public interface PopUpDialogListener extends Parcelable {
         void  onNaturalBtnClick();
-        //void onNegativeBtnClick();
+        void onNegativeBtnClick();
 
          @Override
          default int describeContents(){
@@ -78,17 +79,20 @@ public class PopUpDialog extends DialogFragment {
         ((TextView)getView().findViewById(R.id.popUpDialogTitle)).setText(title);
         ((TextView)getView().findViewById(R.id.popUpDialogDesc)).setText(description);
 
+        ImageButton exitButton = getView().findViewById(R.id.popUpCloseBtn);
         Button naturalBtn = getView().findViewById(R.id.popUpNaturalBtn);
-        naturalBtn.setText(naturalText);
-        naturalBtn.setOnClickListener(v->{
-            listener.onNaturalBtnClick();
-            dismiss();
+        Button negativeBtn = getView().findViewById(R.id.popUpNegativeBtn);
+
+        negativeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.onNegativeBtnClick();
+                dismiss();
+            }
         });
 
-        Button negativeBtn = getView().findViewById(R.id.popUpNegativeBtn);
-        negativeBtn.setText(negativeText);
-        negativeBtn.setOnClickListener(v->{
-            //listener.onNegativeBtnClick();
+        naturalBtn.setOnClickListener(v->{
+            listener.onNaturalBtnClick();
             dismiss();
         });
 
@@ -96,7 +100,7 @@ public class PopUpDialog extends DialogFragment {
             negativeBtn.setActivated(true);
         }
 
-        getView().findViewById(R.id.popUpCloseBtn).setOnClickListener(v->{
+        exitButton.setOnClickListener(v->{
             dismiss();
         });
     }

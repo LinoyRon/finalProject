@@ -7,6 +7,13 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class Authentication {
 
+    Authentication.UserListener mListener;
+
+    public interface UserListener {
+
+        void onNegativeBtnClick();
+    }
+
     private static Authentication mInstance = new Authentication();
     private FirebaseAuth firebaseAuth;
     private UsersRepository mUsersRepository;
@@ -21,12 +28,10 @@ public class Authentication {
 
     public void LogIn(User iLogUser, OnCompleteListener iOnCompleteListener) {
         firebaseAuth.signInWithEmailAndPassword(iLogUser.getEmail(), iLogUser.getPassword()).addOnCompleteListener(iOnCompleteListener);
-        mLoggedInUser = iLogUser;
     }
 
     public void SignUp(User iSignUser, OnCompleteListener iOnCompleteListener) {
         firebaseAuth.createUserWithEmailAndPassword(iSignUser.getEmail(), iSignUser.getPassword()).addOnCompleteListener(iOnCompleteListener);
-        iSignUser.setID(firebaseAuth.getCurrentUser().getUid());
     }
 
     public FirebaseUser getFirebaseUser() {
@@ -34,7 +39,7 @@ public class Authentication {
     }
 
     public User getLoggedInUser() {
-        return mLoggedInUser;
+        return mUsersRepository.getLogUser();
     }
 
     public UsersRepository getUsersRepository() {

@@ -19,7 +19,7 @@
             android:paddingVertical="10dp"
             android:layout_marginStart="10dp"
             android:orientation="vertical"
-            android:backgroundTint="@color/colorPrimaryDark"
+            android:backgroundTint="@null"
             android:background="@drawable/background_message_received">
 
             <TextView
@@ -27,8 +27,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text = "This is a message"
-                android:textSize="20sp"
-                android:textColor="@color/black"/>
+                style="@style/Bold19Black" />
 
         </LinearLayout>
     </LinearLayout>
@@ -54,8 +53,7 @@
                 android:id="@+id/itemMessageContentSent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:textColor="@color/white"
+                style="@style/Bold19White"
                 tools:text="This is a message" />
         </LinearLayout>
     </LinearLayout>

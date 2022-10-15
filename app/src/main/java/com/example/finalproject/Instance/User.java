@@ -5,28 +5,24 @@ import android.os.Parcelable;
 
 public class User implements Parcelable {
     private String Email, Password, PhotoPath, FirstName, LastName, ID, FullName;
+
     Boolean isAdmin = false;
 
     public User() {
     }
 
-    public User(String email, String password, String photoPath, String firstName, String lastName, Boolean isAdmin) {
-        Email = email.trim();
-        Password = password.trim();
-        PhotoPath = photoPath;
-        FirstName = firstName;
-        LastName = lastName;
-        FullName = FirstName + " " + LastName;
-        this.isAdmin = isAdmin;
+    public User(String email, String password) {
+        Email = email;
+        Password = password;
     }
 
-    public User(String email, String password) {
-        FirstName="Testing";
-        LastName="Testing";
+    public User(String email, String password, String firstName, String lastName, Boolean isAdmin) {
         Email = email.trim();
         Password = password.trim();
-        this.isAdmin = false;
-        PhotoPath="https://i2.wp.com/www.siasat.com/wp-content/uploads/2018/03/Rosamund-Pike.jpeg?fit=600%2C421&ssl=1";
+        FirstName = firstName.trim();
+        LastName = lastName.trim();
+        FullName = FirstName + " " + LastName;
+        this.isAdmin = isAdmin;
     }
 
     protected User(Parcel in) {

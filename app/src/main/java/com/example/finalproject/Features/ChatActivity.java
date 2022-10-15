@@ -3,6 +3,7 @@ package com.example.finalproject.Features;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -28,6 +29,7 @@ public class ChatActivity extends AppCompatActivity {
 
     ImageView chatProfileImage;
     ImageButton sendMessageBtn;
+    Button backBtn;
     TextView chatUserName;
     EditText messageEt;
     User chatPartner, currentUser;
@@ -55,6 +57,7 @@ public class ChatActivity extends AppCompatActivity {
         sendMessageBtn = findViewById(R.id.chatSendBtn);
         chatUserName = findViewById(R.id.chatPartnerName);
         messageEt = findViewById(R.id.chatCommentBar);
+        backBtn = findViewById(R.id.backTo);
 
 //        chatUserName.setText(chatPartner.getUserFullName());
         /*Glide.with(this)
@@ -66,6 +69,13 @@ public class ChatActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 checkValidation();
+            }
+        });
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }

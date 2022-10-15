@@ -57,7 +57,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:id="@+id/popUpNaturalBtn"
+                    android:id="@+id/popUpNegativeBtn"
                     android:background="@drawable/btn_rectangle_primary"/>
 
                 <View
@@ -69,7 +69,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:id="@+id/popUpNegativeBtn"
+                    android:id="@+id/popUpNaturalBtn"
                     android:background="@drawable/btn_rectangle_primary"/>
             </LinearLayout>
         </LinearLayout>
@@ -81,5 +81,6 @@
             android:layout_margin="23dp"
             android:background="@null"
             android:src="@drawable/ic_close_black" />
+
     </androidx.cardview.widget.CardView>
 </FrameLayout>

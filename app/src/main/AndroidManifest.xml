@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.finalproject">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -28,6 +28,20 @@
         <activity
             android:name=".FragmentsActivity"/>
         <activity android:name=".Features.ChatActivity"/>
+
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.finalproject.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <!-- resource file to create -->
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/files_dir" />
+        </provider>
+
 
     </application>
 </manifest>

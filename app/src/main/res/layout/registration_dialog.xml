@@ -31,7 +31,7 @@
                 android:background="@drawable/background_pop_up"
                 android:gravity="center"
                 android:paddingVertical="23dp"
-                tools:text="@string/addRoomTitle" />
+                tools:text="@string/addUser" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -108,8 +108,9 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/cancel"
+                    android:textColor="@color/colorPrimary"
                     android:id="@+id/addRoomNegativeBtn"
-                    android:background="@drawable/btn_rectangle_primary"
+                    android:background="@drawable/round_border"
                     app:backgroundTint="@null"/>
 
                 <View
@@ -123,7 +124,7 @@
                     android:layout_weight="1"
                     android:text="@string/add"
                     android:id="@+id/addRoomNaturalBtn"
-                    android:background="@drawable/btn_rectangle_primary"
+                    android:background="@drawable/round_bg"
                     app:backgroundTint="@null"/>
             </LinearLayout>
         </LinearLayout>

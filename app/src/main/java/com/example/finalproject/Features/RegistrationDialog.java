@@ -18,8 +18,9 @@ import com.example.finalproject.Instance.User;
 import com.example.finalproject.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 
-public class RegistrationDialog {
+public class RegistrationDialog extends AppCompatActivity {
 
     Context mContext;
     AlertDialog.Builder mBuilder;
@@ -46,33 +47,34 @@ public class RegistrationDialog {
     private void setViews(){
         mNaturalBtn = mView.findViewById(R.id.addRoomNaturalBtn);
         mNegativeBtn = mView.findViewById(R.id.addRoomNegativeBtn);
-
         userEmailEt = mView.findViewById(R.id.inputEmail);
         userPasswordEt = mView.findViewById(R.id.inputPassword);
         userFirstNameEt=mView.findViewById(R.id.inputFirstName);
         userLastNameEt=mView.findViewById(R.id.inputLastName);
         roleCheckBox=mView.findViewById(R.id.roleCheckbox);
-
         mProgressBar = mView.findViewById(R.id.addRoomProgressBar);
         mExitBtn = mView.findViewById(R.id.exitBtnAddRoom);
 
-        View.OnClickListener onClickListener = new View.OnClickListener() {
+        mExitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mDialog.dismiss();
             }
-        };
-
-        mExitBtn.setOnClickListener(onClickListener);
-        mNegativeBtn.setOnClickListener(onClickListener);
+        });
 
         mNaturalBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 validationDetails();
-                mDialog.dismiss();
             }
         });
+
+/*        userProfileImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showPopUpMenu();
+            }
+        });*/
     }
 
     public void show()
@@ -87,23 +89,28 @@ public class RegistrationDialog {
                 userLastName = userLastNameEt.getText().toString();
 
         if(userFirstName.isEmpty()){
-            userFirstNameEt.setError("first name empty");
+            userFirstNameEt.setError(mContext.getString(R.string.nameFirstReqierd));
             userFirstNameEt.requestFocus();
         }
         else if(userLastName.isEmpty()){
-            userEmailEt.setError("userLastNameEt empty");
+            userFirstNameEt.setError(mContext.getString(R.string.nameLastReqierd));
             userEmailEt.requestFocus();
         }
         else if(userEmail.isEmpty()){
-            userEmailEt.setError("email empty");
+            userEmailEt.setError(mContext.getString(R.string.emailRequired));
             userEmailEt.requestFocus();
         }
         else if(userPassword.isEmpty()){
-            userPasswordEt.setError("userPassword empty");
+            userPasswordEt.setError(mContext.getString(R.string.passwordReqired));
             userPasswordEt.requestFocus();
         }
-        else {mRegisterUser = new User(userEmail, userPassword);
-            registration();}
+        else if(userPassword.length() < 6){
+            userPasswordEt.setError(mContext.getString(R.string.passwordLenght));
+            userPasswordEt.requestFocus();
+        }
+        else {mRegisterUser = new User(userEmail, userPassword,userFirstName,userLastName,roleCheckBox.isChecked());
+            registration();
+            mDialog.dismiss();}
     }
 
     private void registration(){
@@ -111,6 +118,9 @@ public class RegistrationDialog {
             @Override
             public void onComplete(@NonNull Task task) {
                 if(task.isSuccessful()){
+
+                    mRegisterUser.setID(FirebaseAuth.getInstance().getUid());
+
                     Authentication.getInstance().getUsersRepository().AddUser(mRegisterUser, new OnCompleteListener(){
                         @Override
                         public void onComplete(@NonNull Task task) {

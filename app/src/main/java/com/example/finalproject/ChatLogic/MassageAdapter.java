@@ -14,12 +14,13 @@ import com.example.finalproject.Firebase.Authentication;
 import com.example.finalproject.Instance.Message;
 import com.example.finalproject.R;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class MassageAdapter extends RecyclerView.Adapter<MassageAdapter.ConversationViewHolder> {
+public class MassageAdapter extends RecyclerView.Adapter<MassageAdapter.MessageViewHolder> {
 
-    private List<Message> mChatHistory;
+    private List<Message> mChatHistory = new ArrayList<>();
     private Message mCurrentMessage;
     Context m_Context;
 
@@ -29,9 +30,9 @@ public class MassageAdapter extends RecyclerView.Adapter<MassageAdapter.Conversa
 
     @NonNull
     @Override
-    public ConversationViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MessageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.message_cell,parent,false);
-        ConversationViewHolder ViewHolder = new ConversationViewHolder(view);
+        MessageViewHolder ViewHolder = new MessageViewHolder(view);
 
         m_Context = parent.getContext();
 
@@ -39,10 +40,10 @@ public class MassageAdapter extends RecyclerView.Adapter<MassageAdapter.Conversa
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ConversationViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MessageViewHolder holder, int position) {
         mCurrentMessage = mChatHistory.get(position);
 
-        if(isLoggedInUserSendTheMessage()){
+        if(isCurrentUserSentTheMessage()){
             holder.bindSentMessage();
         } else {
             holder.bindReceivedMessage();
@@ -51,19 +52,19 @@ public class MassageAdapter extends RecyclerView.Adapter<MassageAdapter.Conversa
         holder.massageContentTv.setText(mCurrentMessage.getMessageContent());
     }
 
-    private boolean isLoggedInUserSendTheMessage(){
-        return Objects.equals(Authentication.getInstance().getLoggedInUser().getID(), mCurrentMessage.getSender().getID());
+    private boolean isCurrentUserSentTheMessage() {
+        return Objects.equals(mCurrentMessage.getReceiver().getID(), Authentication.getInstance().getLoggedInUser().getID());
     }
 
     @Override
     public int getItemCount() { return mChatHistory.size();  }
 
-    protected class ConversationViewHolder extends RecyclerView.ViewHolder{
+    protected class MessageViewHolder extends RecyclerView.ViewHolder{
 
         TextView massageContentTv;
         View mItemView;
 
-        public ConversationViewHolder(@NonNull View itemView) {
+        public MessageViewHolder(@NonNull View itemView) {
             super(itemView);
             mItemView=itemView;
             massageContentTv=itemView.findViewById(R.id.itemMessageContentSent);

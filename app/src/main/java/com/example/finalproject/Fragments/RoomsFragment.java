@@ -16,9 +16,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.finalproject.Features.AddRoomDialog;
-import com.example.finalproject.Feature.PopUpDialog;
-import com.example.finalproject.Feature.PopUpDialog.PopUpDialogListener;
+import com.example.finalproject.Features.PopUpDialog;
 import com.example.finalproject.Instance.Room;
 import com.example.finalproject.R;
 import com.example.finalproject.RoomsLogic.MyItemTouchHelper;
@@ -77,12 +77,17 @@ public class RoomsFragment extends Fragment {
             @Override
             public void onRoomClicked(Room clickedRoom, TextView ownerName, ImageView roomStatusImage) {
                 if(clickedRoom.getAvailable()){
-                    PopUpDialogListener Listener = new PopUpDialog.PopUpDialogListener() {
+                    PopUpDialog.PopUpDialogListener Listener = new PopUpDialog.PopUpDialogListener() {
                         @Override
                         public void onNaturalBtnClick() {//reserve the room
                             ownerName.setVisibility(View.VISIBLE);
                             clickedRoom.setAvailable(false);
                             roomStatusImage.setImageResource(R.drawable.ic_occupied);
+                        }
+
+                        @Override
+                        public void onNegativeBtnClick() {
+
                         }
                     };
                     PopUpDialog.newInstance(
@@ -101,6 +106,11 @@ public class RoomsFragment extends Fragment {
                             ownerName.setVisibility(View.GONE);
                             clickedRoom.setAvailable(true);
                             roomStatusImage.setImageResource(R.drawable.ic_check);
+                        }
+
+                        @Override
+                        public void onNegativeBtnClick() {
+
                         }
                     };
                     PopUpDialog.newInstance(
@@ -131,6 +141,11 @@ public class RoomsFragment extends Fragment {
                                 }
                             }
                         });
+                    }
+
+                    @Override
+                    public void onNegativeBtnClick() {
+
                     }
                 };
                 PopUpDialog.newInstance(

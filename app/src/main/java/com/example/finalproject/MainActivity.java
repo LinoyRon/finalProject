@@ -55,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                myProgressBar.setVisibility(View.VISIBLE);
                 validationDetails();
             }
         });
@@ -70,14 +69,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void validationDetails(){
+        myProgressBar.setVisibility(View.VISIBLE);
         String userEmail = userEmailEt.getText().toString(),
                 userPassword = userPasswordEt.getText().toString();
 
         if(userEmail.isEmpty()){
+            myProgressBar.setVisibility(View.GONE);
             userEmailEt.setError(getResources().getString(R.string.emailRequired));
             userEmailEt.requestFocus();
         }
         else if(userPassword.isEmpty()){
+            myProgressBar.setVisibility(View.GONE);
             userPasswordEt.setError(getResources().getString(R.string.passwordReqired));
             userPasswordEt.requestFocus();
         }
@@ -97,10 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 }else{
                     Toast.makeText(MainActivity.this,task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                 }
-                myProgressBar.setVisibility(View.GONE);
             }
         });
     }
-
-
 }

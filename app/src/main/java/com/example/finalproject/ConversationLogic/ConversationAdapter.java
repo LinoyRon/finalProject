@@ -6,15 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.example.finalproject.Instance.Conversation;
-import com.example.finalproject.Instance.User;
 import com.example.finalproject.R;
 
 import java.util.List;
@@ -65,7 +61,7 @@ public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapte
     @Override
     public int getItemCount() { return mChattingUsers.size();  }
 
-    protected class ConversationViewHolder extends RecyclerView.ViewHolder{
+    public class ConversationViewHolder extends RecyclerView.ViewHolder{
 
         ImageView userProfilePic;
         TextView userName;
