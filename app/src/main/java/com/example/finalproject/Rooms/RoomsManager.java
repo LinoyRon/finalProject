@@ -1,13 +1,8 @@
-package com.example.finalproject.RoomsLogic;
+package com.example.finalproject.Rooms;
 
-import com.example.finalproject.ChatLogic.MassageAdapter;
-import com.example.finalproject.Firebase.RoomsRepository;
-import com.example.finalproject.Instance.Message;
 import com.example.finalproject.Instance.Room;
-import com.example.finalproject.Instance.User;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class RoomsManager {
     private static RoomsManager mInstance = new RoomsManager();

@@ -1,4 +1,4 @@
-package com.example.finalproject.ChatLogic;
+package com.example.finalproject.Messages;
 
 import android.content.Context;
 import android.view.LayoutInflater;

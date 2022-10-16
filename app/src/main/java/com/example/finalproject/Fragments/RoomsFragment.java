@@ -17,13 +17,13 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.finalproject.Features.AddRoomDialog;
-import com.example.finalproject.Features.PopUpDialog;
+import com.example.finalproject.Rooms.AddRoomDialog;
+import com.example.finalproject.Dialogs.PopUpDialog;
 import com.example.finalproject.Instance.Room;
 import com.example.finalproject.R;
-import com.example.finalproject.RoomsLogic.MyItemTouchHelper;
-import com.example.finalproject.RoomsLogic.RoomsAdapter;
-import com.example.finalproject.RoomsLogic.RoomsManager;
+import com.example.finalproject.Rooms.MyItemTouchHelper;
+import com.example.finalproject.Rooms.RoomsAdapter;
+import com.example.finalproject.Rooms.RoomsManager;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;

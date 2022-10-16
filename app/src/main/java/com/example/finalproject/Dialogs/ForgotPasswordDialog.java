@@ -1,4 +1,4 @@
-package com.example.finalproject.Features;
+package com.example.finalproject.Dialogs;
 
 import android.content.Context;
 import android.view.View;

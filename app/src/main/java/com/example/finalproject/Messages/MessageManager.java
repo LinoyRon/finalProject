@@ -1,6 +1,5 @@
-package com.example.finalproject.ChatLogic;
+package com.example.finalproject.Messages;
 
-import com.example.finalproject.Firebase.MessagesRepository;
 import com.example.finalproject.Instance.Message;
 import com.example.finalproject.Instance.User;
 

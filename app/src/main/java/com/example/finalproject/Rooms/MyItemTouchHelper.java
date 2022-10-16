@@ -1,4 +1,4 @@
-package com.example.finalproject.RoomsLogic;
+package com.example.finalproject.Rooms;
 
 import android.content.Context;
 import android.graphics.Canvas;

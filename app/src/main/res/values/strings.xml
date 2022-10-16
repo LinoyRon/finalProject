@@ -57,4 +57,6 @@
     <string name="roommeetingempty">You did not select a room number</string>
     <string name="titleEmpy">Please enter meeting title</string>
     <string name="timeEmpty">You have not set a time for the meeting</string>
+    <string name="meetingAddedSuccessfully">Meeting added successfully</string>
+    <string name="online">Online meeting</string>
 </resources>

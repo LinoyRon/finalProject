@@ -1,9 +1,8 @@
-package com.example.finalproject.Firebase;
+package com.example.finalproject.Rooms;
 
 import androidx.annotation.NonNull;
 
 import com.example.finalproject.Instance.Room;
-import com.example.finalproject.RoomsLogic.RoomsManager;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

@@ -16,10 +16,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.finalproject.ConversationLogic.ConversationAdapter;
-import com.example.finalproject.ConversationLogic.ConversationManager;
-import com.example.finalproject.Features.ChatActivity;
-import com.example.finalproject.Instance.Conversation;
+import com.example.finalproject.ChatActivity;
+import com.example.finalproject.Conversation.ConversationAdapter;
+import com.example.finalproject.Conversation.ConversationManager;
 import com.example.finalproject.Instance.User;
 import com.example.finalproject.R;
 
@@ -81,12 +80,7 @@ public class ConversationFragment extends Fragment {
     }
 
     private ConversationAdapter.ConversationAdapterListener getConversationAdapterListener() {
-        return new ConversationAdapter.ConversationAdapterListener() {
-            @Override
-            public void onConversationClick(Conversation iConversation) {
-                openChatActivity(iConversation.getConversationId(),iConversation.getCurrentUser(),iConversation.getChatPartner());
-            }
-        };
+        return iConversation -> openChatActivity(iConversation.getConversationId(),iConversation.getCurrentUser(),iConversation.getChatPartner());
     }
 
     private void openChatActivity(String iChatId, User iUser,User iPartnerChat) {

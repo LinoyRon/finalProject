@@ -23,7 +23,7 @@ public class User implements Parcelable {
         FirstName = firstName.trim();
         LastName = lastName.trim();
         FullName = FirstName + " " + LastName;
-        PhotoPath = "android.resource://com.example.finalproject/app/src/main/res/drawable"+R.drawable.ic_profile;
+        PhotoPath = "android.resource://com.example.finalproject/app/src/main/res/drawable"+ R.drawable.ic_profile;
         this.isAdmin = isAdmin;
     }
 

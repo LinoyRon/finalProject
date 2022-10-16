@@ -1,7 +1,8 @@
-package com.example.finalproject.Firebase;
+package com.example.finalproject.Messages;
 
 import androidx.annotation.Nullable;
 
+import com.example.finalproject.Firebase.Authentication;
 import com.example.finalproject.Instance.Message;
 import com.example.finalproject.Instance.User;
 import com.google.android.gms.tasks.OnCompleteListener;

@@ -62,9 +62,7 @@ public class ProfileFragment extends Fragment {
 
         fullNameTv.setText(loginUser.getFullName());
         emailTv.setText(loginUser.getEmail());
-
-        if(loginUser.getPhotoPath()!=null){
-            userImageView.setImageURI(Uri.parse(loginUser.getPhotoPath()));}
+        userImageView.setImageURI(Uri.parse(loginUser.getPhotoPath()));
 
         logOutTv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,7 +121,6 @@ public class ProfileFragment extends Fragment {
                 "com.example.finalproject.provider",
                 file);
 
-        // Toast.makeText(AddSongActivity.this, imageUri.toString(), Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
         startActivityForResult(intent, CAMERA_REQUEST);

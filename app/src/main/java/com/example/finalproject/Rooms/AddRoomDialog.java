@@ -1,4 +1,4 @@
-package com.example.finalproject.Features;
+package com.example.finalproject.Rooms;
 
 import android.content.Context;
 import android.view.View;
@@ -14,7 +14,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.finalproject.Instance.Room;
 import com.example.finalproject.R;
-import com.example.finalproject.RoomsLogic.RoomsManager;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 

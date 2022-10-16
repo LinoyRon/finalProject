@@ -1,4 +1,4 @@
-package com.example.finalproject.Calender;
+package com.example.finalproject.Meetings;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -41,7 +41,7 @@ public class MeetingAdapter extends RecyclerView.Adapter<MeetingAdapter.MeetingV
         
         holder.mTitle.setText(meeting.getTitle());
         holder.mLocation.setText(meeting.getLocation());
-        holder.mTime.setText(meeting.getTime());
+        holder.mTime.setText(meeting.getTime() + ", " + meeting.getDate());
     }
 
     @Override

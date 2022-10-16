@@ -1,4 +1,4 @@
-package com.example.finalproject.Features;
+package com.example.finalproject;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,12 +17,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.finalproject.ChatLogic.MessageManager;
+import com.example.finalproject.Messages.MessageManager;
 import com.example.finalproject.Firebase.Authentication;
-import com.example.finalproject.Firebase.MessagesRepository;
+import com.example.finalproject.Messages.MessagesRepository;
 import com.example.finalproject.Instance.Message;
 import com.example.finalproject.Instance.User;
-import com.example.finalproject.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;

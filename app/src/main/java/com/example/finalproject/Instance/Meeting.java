@@ -1,16 +1,20 @@
 package com.example.finalproject.Instance;
 
+import com.example.finalproject.Firebase.Authentication;
+
 public class Meeting {
     String Title, Location, Date, Time;
+    User SetUpMeetingUser;
 
-    public Meeting(String title, String location, String date, String time) {
-        Title = title;
-        Location = location;
-        Date = date;
-        Time = time;
+    public Meeting() {
     }
 
-    public Meeting(String meetingTitle, String meetingLocation, String meetingTime) {
+    public Meeting(String title, String location, String date, String time) {
+        Title = title.trim();
+        Location = location.trim();
+        Date = date.trim();
+        Time = time.trim();
+        SetUpMeetingUser = Authentication.getInstance().getLoggedInUser();
     }
 
     public String getTitle() {
@@ -43,5 +47,13 @@ public class Meeting {
 
     public void setTime(String time) {
         Time = time;
+    }
+
+    public User getSetUpMeetingUser() {
+        return SetUpMeetingUser;
+    }
+
+    public void setSetUpMeetingUser(User setUpMeetingUser) {
+        SetUpMeetingUser = setUpMeetingUser;
     }
 }

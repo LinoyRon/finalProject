@@ -1,4 +1,4 @@
-package com.example.finalproject.Features;
+package com.example.finalproject.Dialogs;
 
 import android.os.Bundle;
 import android.os.Parcel;

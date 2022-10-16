@@ -9,16 +9,13 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.finalproject.Features.ForgotPasswordDialog;
-import com.example.finalproject.Features.RegistrationDialog;
+import com.example.finalproject.Dialogs.ForgotPasswordDialog;
+import com.example.finalproject.Dialogs.RegistrationDialog;
 import com.example.finalproject.Firebase.Authentication;
 import com.example.finalproject.Instance.User;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,27 +41,16 @@ public class MainActivity extends AppCompatActivity {
         myProgressBar= findViewById(R.id.progressBar);
         register = findViewById(R.id.registerToSystem);
 
-        register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                RegistrationDialog registrationDialog = new RegistrationDialog(view.getContext());
-                registrationDialog.show();
-            }
+        register.setOnClickListener(view -> {
+            RegistrationDialog registrationDialog = new RegistrationDialog(view.getContext());
+            registrationDialog.show();
         });
 
-        loginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                validationDetails();
-            }
-        });
+        loginBtn.setOnClickListener(view -> validationDetails());
 
-        forgotPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ForgotPasswordDialog forgotPasswordDialog = new ForgotPasswordDialog(MainActivity.this);
-                forgotPasswordDialog.show();
-            }
+        forgotPassword.setOnClickListener(view -> {
+            ForgotPasswordDialog forgotPasswordDialog = new ForgotPasswordDialog(MainActivity.this);
+            forgotPasswordDialog.show();
         });
     }
 
@@ -88,19 +74,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void logIn() {
-        Authentication.getInstance().LogIn(mSignInUser, new OnCompleteListener() {
-            @Override
-            public void onComplete(@NonNull Task task) {
+        Authentication.getInstance().LogIn(mSignInUser, task -> {
 
-                if(task.isSuccessful()){
-                    Intent intent = new Intent(MainActivity.this, FragmentsActivity.class);
-                    startActivity(intent);
-                    finish();
-                }else{
-                    Toast.makeText(MainActivity.this,task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                }
-                myProgressBar.setVisibility(View.GONE);
+            if(task.isSuccessful()){
+                Intent intent = new Intent(MainActivity.this, FragmentsActivity.class);
+                startActivity(intent);
+                finish();
+            }else{
+                Toast.makeText(MainActivity.this,task.getException().getMessage(), Toast.LENGTH_SHORT).show();
             }
+            myProgressBar.setVisibility(View.GONE);
         });
     }
 }

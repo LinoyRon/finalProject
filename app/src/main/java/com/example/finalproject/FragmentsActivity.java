@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.Navigation;
 
-import com.example.finalproject.Features.AddMeetingDialog;
+import com.example.finalproject.Meetings.AddMeetingDialog;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
