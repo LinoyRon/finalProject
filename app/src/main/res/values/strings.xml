@@ -54,4 +54,7 @@
     <string name="eventTitle">Title</string>
     <string name="time">Time</string>
     <string name="addMeeting">Add Meeting</string>
+    <string name="roommeetingempty">You did not select a room number</string>
+    <string name="titleEmpy">Please enter meeting title</string>
+    <string name="timeEmpty">You have not set a time for the meeting</string>
 </resources>

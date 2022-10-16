@@ -55,4 +55,7 @@
     <string name="eventTitle">שם האירוע</string>
     <string name="time">שעת הפגישה</string>
     <string name="addMeeting">הוסף פגישה</string>
+    <string name="roommeetingempty">לא בחרת חדר לפגישה</string>
+    <string name="titleEmpy">נדרש למלא את מטרת הפגישה</string>
+    <string name="timeEmpty">לא בחרת שעה לפגישה</string>
 </resources>

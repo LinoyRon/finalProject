@@ -54,6 +54,17 @@
                 android:layout_margin="10dp" />
 
             <Button
+                android:id="@+id/eventDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="18/10/2022"
+                android:gravity="start"
+                android:background="@color/transparent"
+                android:drawableEnd="@drawable/ic_down"
+                style="@style/Reg17Black"
+                android:layout_margin="10dp" />
+
+            <Button
                 android:id="@+id/eventTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

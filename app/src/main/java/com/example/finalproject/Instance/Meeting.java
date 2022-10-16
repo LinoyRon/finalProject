@@ -10,6 +10,9 @@ public class Meeting {
         Time = time;
     }
 
+    public Meeting(String meetingTitle, String meetingLocation, String meetingTime) {
+    }
+
     public String getTitle() {
         return Title;
     }
