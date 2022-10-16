@@ -50,4 +50,8 @@
     <string name="nameFirstReqierd">First name is reqierd</string>
     <string name="nameLastReqierd">Last name is reqierd</string>
     <string name="passwordLenght">Password must be at least 6 digits</string>
+    <string name="eventLocation">Location</string>
+    <string name="eventTitle">Title</string>
+    <string name="time">Time</string>
+    <string name="addMeeting">Add Meeting</string>
 </resources>

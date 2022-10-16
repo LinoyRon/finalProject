@@ -60,7 +60,7 @@
 
         <EditText
             android:id="@+id/chatCommentBar"
-            style="@style/SemiBold12Black"
+            style="@style/SemiBold15Black"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="15dp"

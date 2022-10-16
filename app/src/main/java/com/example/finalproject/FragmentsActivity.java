@@ -9,21 +9,30 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.Navigation;
 
+import com.example.finalproject.Features.AddMeetingDialog;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class FragmentsActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNav;
+    FloatingActionButton addMeetingBtn;
     TextView header;
-    View addMeetingBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragments_main);
 
-        addMeetingBtn=findViewById(R.id.fab);
         header=findViewById(R.id.mainActTopHeaderText);
+        addMeetingBtn=findViewById(R.id.fab);
+        addMeetingBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AddMeetingDialog addMeetingDialog = new AddMeetingDialog(FragmentsActivity.this);
+                addMeetingDialog.show();
+            }
+        });
 
         initializeBottomNav();
     }
@@ -47,8 +56,8 @@ public class FragmentsActivity extends AppCompatActivity {
                             Navigation.findNavController(FragmentsActivity.this,R.id.fragmentContainer).navigate(R.id.profileFragment);
                             break;
                         case R.id.mi_calender:
-                            header.setText(R.string.calender);
-                            //Navigation.findNavController(MainActivity.this,R.id.fragmentContainer).navigate(R.id.);
+                            header.setVisibility(View.GONE);
+                            Navigation.findNavController(FragmentsActivity.this,R.id.fragmentContainer).navigate(R.id.calenderFragment);
                             break;
                         case R.id.mi_chat:
                             header.setText(R.string.chat);

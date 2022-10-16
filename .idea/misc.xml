@@ -45,7 +45,10 @@
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/drawable/search_background.xml" value="0.1015" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/activity_chat.xml" value="0.16041666666666668" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/activity_main.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/addevent_dialog.xml" value="0.1" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/addmeeting_dialog.xml" value="0.1796875" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/addroom_dialog.xml" value="0.1796875" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/calendar_layout.xml" value="0.1" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/chat_cell.xml" value="0.14743589743589744" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/conversation_cell.xml" value="0.1796875" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/dialog_popup.xml" value="0.12395833333333334" />
@@ -64,6 +67,7 @@
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/item_message.xml" value="0.1796875" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/lauout_conversations.xml" value="0.17864583333333334" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/loginpage.xml" value="0.1796875" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/meeting_cell.xml" value="0.1" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/message_cell.xml" value="0.1640625" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/registration_dialog.xml" value="0.15520833333333334" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/layout/room_cell.xml" value="0.1640625" />
@@ -71,6 +75,8 @@
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/menu/addphoto.xml" value="0.14427083333333332" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1140625" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/menu/botton_nav_menu.xml" value="0.1796875" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/menu/rooms_menu.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/menu/time_menu.xml" value="0.1796875" />
         <entry key="..\:/Users/linoy/AndroidStudioProjects/finalProject/app/src/main/res/xml/files_dir.xml" value="0.13020833333333334" />
       </map>
     </option>

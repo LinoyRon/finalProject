@@ -3,6 +3,7 @@ package com.example.finalproject.Features;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -15,7 +16,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.finalproject.ChatLogic.MessageManager;
+import com.example.finalproject.Firebase.Authentication;
 import com.example.finalproject.Firebase.MessagesRepository;
 import com.example.finalproject.Instance.Message;
 import com.example.finalproject.Instance.User;
@@ -32,7 +35,7 @@ public class ChatActivity extends AppCompatActivity {
     Button backBtn;
     TextView chatUserName;
     EditText messageEt;
-    User chatPartner, currentUser;
+    User chatPartner;
     String conversationId;
     RecyclerView myChatHistoryRecyclerView;
     Message mMessageToSend;
@@ -45,8 +48,7 @@ public class ChatActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chat);
 
         Intent intent = getIntent();
-        currentUser = intent.getParcelableExtra("PARTNER_CHAT");
-        chatPartner = intent.getParcelableExtra("USER");
+        chatPartner = intent.getParcelableExtra("PARTNER_CHAT");
 
         setViews();
         setRecyclerView();
@@ -59,11 +61,11 @@ public class ChatActivity extends AppCompatActivity {
         messageEt = findViewById(R.id.chatCommentBar);
         backBtn = findViewById(R.id.backTo);
 
-//        chatUserName.setText(chatPartner.getUserFullName());
-        /*Glide.with(this)
+        chatUserName.setText(chatPartner.getFullName());
+        Glide.with(this)
                 .load(chatPartner.getPhotoPath())
                 .circleCrop()
-                .into(chatProfileImage);*/
+                .into(chatProfileImage);
 
         sendMessageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,7 +86,7 @@ public class ChatActivity extends AppCompatActivity {
         myChatHistoryRecyclerView = findViewById(R.id.chatHistoryRecycler);
         myChatHistoryRecyclerView.setHasFixedSize(true);
         myChatHistoryRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        myChatHistoryRecyclerView.setAdapter(new MessageManager().getMassageAdapter());
+        myChatHistoryRecyclerView.setAdapter(new MessageManager(chatPartner).getMassageAdapter());
     }
 
     private void checkValidation() {
@@ -94,8 +96,9 @@ public class ChatActivity extends AppCompatActivity {
             Toast.makeText(this, getString(R.string.emptyMessagesError),Toast.LENGTH_LONG).show();
         }
         else{
-            mMessageToSend = new Message(currentUser, chatPartner, messageContent);
+            mMessageToSend = new Message(Authentication.getInstance().getLoggedInUser(), chatPartner, messageContent);
             sendMessage();
+            messageEt.onEditorAction(EditorInfo.IME_ACTION_DONE);
         }
     }
 

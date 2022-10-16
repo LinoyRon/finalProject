@@ -2,23 +2,30 @@ package com.example.finalproject.ChatLogic;
 
 import com.example.finalproject.Firebase.MessagesRepository;
 import com.example.finalproject.Instance.Message;
+import com.example.finalproject.Instance.User;
 
 import java.util.List;
 
 public class MessageManager {
 
     private MassageAdapter mMessageAdapter;
-    private List<Message> mChattingHistory;
+    private List<Message> mChatHistory;
+    MessagesRepository.NotifyAdapterListener listener;
 
-    public MessageManager() {
-        MessagesRepository.getInstance().getMessageHistoryList();
-        mMessageAdapter = new MassageAdapter(mChattingHistory);
+    public MessageManager(User iChatPartner) {
+        mChatHistory = MessagesRepository.getInstance().getChatHistory(iChatPartner);
+        mMessageAdapter = new MassageAdapter(mChatHistory);
+
+        listener = new MessagesRepository.NotifyAdapterListener() {
+            @Override
+            public void addMessage(Message iAddMessage) {
+                mChatHistory.add(iAddMessage);
+                mMessageAdapter.notifyDataSetChanged();
+            }
+        };
+
+        MessagesRepository.getInstance().setListener(listener);
     }
 
     public MassageAdapter getMassageAdapter() { return mMessageAdapter; }
-
-    public List<Message> getChattingHistory() {
-        mMessageAdapter.notifyDataSetChanged();
-        return mChattingHistory = MessagesRepository.getInstance().getMessageHistoryList();
-    }
 }

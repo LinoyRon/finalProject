@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.finalproject.Instance.Conversation;
 import com.example.finalproject.R;
 
@@ -44,18 +45,14 @@ public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ConversationViewHolder holder, int position) {
-
         mCurrentConversation = mChattingUsers.get(position);
 
-        /*Glide.with(m_Context).load(currentUser.getPhotoPath()).into(holder.userProfilePic);
-        holder.userName.setText(currentUser.getFirstName()+' '+currentUser.getLastName());
+        holder.userName.setText(mCurrentConversation.getChatPartner().getFullName());
+        //holder.lastMessage.setText(mCurrentConversation.getLastMessage().getMessageContent());
 
         Glide.with(holder.itemView.getContext())
-                .load(conversation.getOppositeUser().getPhotoPath())
-                .circleCrop()
-                .into(holder.thumbnail);
-        holder.fullName.setText(conversation.getOppositeUser().userFullName());
-        */
+                .load(mCurrentConversation.getChatPartner().getPhotoPath())
+                .into(holder.userProfilePic);
     }
 
     @Override
@@ -64,13 +61,14 @@ public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapte
     public class ConversationViewHolder extends RecyclerView.ViewHolder{
 
         ImageView userProfilePic;
-        TextView userName;
+        TextView userName, lastMessage;
 
         public ConversationViewHolder(@NonNull View itemView) {
             super(itemView);
 
             userProfilePic=itemView.findViewById(R.id.userProfileImageInChat);
             userName=itemView.findViewById(R.id.userNameInChat);
+            lastMessage=itemView.findViewById(R.id.inputLastName);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

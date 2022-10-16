@@ -51,4 +51,8 @@
     <string name="nameFirstReqierd">נדרש למלא שם פרטי</string>
     <string name="nameLastReqierd">נדרש למלא שם משפחה</string>
     <string name="passwordLenght">סיסמה חייבת להיות לפחות 6 ספרות</string>
+    <string name="eventLocation">מיקום</string>
+    <string name="eventTitle">שם האירוע</string>
+    <string name="time">שעת הפגישה</string>
+    <string name="addMeeting">הוסף פגישה</string>
 </resources>

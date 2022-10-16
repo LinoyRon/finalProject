@@ -63,7 +63,7 @@ public class PopUpDialog extends DialogFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setStyle(STYLE_NO_FRAME, R.style.FullScreenDialogStyle);
+
         title = getArguments().getString("title", "");
         description = getArguments().getString("description", "");
         naturalText = getArguments().getString("naturalText", "");

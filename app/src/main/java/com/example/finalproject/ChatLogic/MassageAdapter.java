@@ -53,7 +53,7 @@ public class MassageAdapter extends RecyclerView.Adapter<MassageAdapter.MessageV
     }
 
     private boolean isCurrentUserSentTheMessage() {
-        return Objects.equals(mCurrentMessage.getReceiver().getID(), Authentication.getInstance().getLoggedInUser().getID());
+        return Objects.equals(mCurrentMessage.getSender().getID(), Authentication.getInstance().getLoggedInUser().getID());
     }
 
     @Override

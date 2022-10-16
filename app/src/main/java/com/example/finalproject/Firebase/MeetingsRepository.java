@@ -15,9 +15,9 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class MessagesRepository {
+public class MeetingsRepository {
 
-   static MessagesRepository instance = new MessagesRepository();
+   static MeetingsRepository instance = new MeetingsRepository();
    FirebaseFirestore db;
    CollectionReference collectionReference;
    ArrayList<Message> mMessageHistoryList = new ArrayList<>();
@@ -26,7 +26,7 @@ public class MessagesRepository {
 
    public interface NotifyAdapterListener{ void addMessage(Message iAddMessage); }
 
-   public static MessagesRepository getInstance() {
+   public static MeetingsRepository getInstance() {
       return instance;
    }
 
@@ -34,7 +34,7 @@ public class MessagesRepository {
       this.listener = listener;
    }
 
-   public MessagesRepository() {
+   public MeetingsRepository() {
       db = FirebaseFirestore.getInstance();
       collectionReference = db.collection("messages");
       mLogUser = Authentication.getInstance().getLoggedInUser();

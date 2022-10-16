@@ -56,14 +56,16 @@ public class UsersRepository {
         return mUsersList;
     }
 
+    public CollectionReference getCollectionReference() {
+        return collectionReference;
+    }
+
     public void AddUser(User iUserToAdd, OnCompleteListener iOnCompleteListener) {
-        //mDatabaseReference.child(iUserToAdd.getID()).setValue(iUserToAdd).addOnCompleteListener(iOnCompleteListener);
         collectionReference.document(iUserToAdd.getID()).set(iUserToAdd).addOnCompleteListener(iOnCompleteListener);
     }
 
     public void UpdateProfileImage(User iUserToUpdate, String iImagePath, OnCompleteListener iOnCompleteListener) {
         iUserToUpdate.setPhotoPath(iImagePath);
-        //mDatabaseReference.child(iUserToUpdate.getID()).child("photoPath").setValue(iImagePath);
         collectionReference.document(iUserToUpdate.getID()).update("photoPath", iImagePath).addOnCompleteListener(iOnCompleteListener);
     }
 

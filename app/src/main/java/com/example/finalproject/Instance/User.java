@@ -3,9 +3,10 @@ package com.example.finalproject.Instance;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.example.finalproject.R;
+
 public class User implements Parcelable {
     private String Email, Password, PhotoPath, FirstName, LastName, ID, FullName;
-
     Boolean isAdmin = false;
 
     public User() {
@@ -22,6 +23,7 @@ public class User implements Parcelable {
         FirstName = firstName.trim();
         LastName = lastName.trim();
         FullName = FirstName + " " + LastName;
+        PhotoPath = "android.resource://com.example.finalproject/app/src/main/res/drawable"+R.drawable.ic_profile;
         this.isAdmin = isAdmin;
     }
 
@@ -102,6 +104,14 @@ public class User implements Parcelable {
 
     public void setFullName(String fullName) {
         FullName = fullName;
+    }
+
+    public Boolean getAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(Boolean admin) {
+        isAdmin = admin;
     }
 
     @Override

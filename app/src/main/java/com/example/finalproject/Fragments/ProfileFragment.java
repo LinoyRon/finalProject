@@ -21,6 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
 import com.example.finalproject.Firebase.Authentication;
 import com.example.finalproject.Instance.User;
 import com.example.finalproject.MainActivity;
@@ -153,8 +154,8 @@ public class ProfileFragment extends Fragment {
             imageUri = Uri.parse(photoPath);
         }
         else { return; }
-        
-        userImageView.setImageURI(imageUri);
+
+        Glide.with(this.getContext()).load(imageUri).into(userImageView);
         Authentication.getInstance().getUsersRepository().UpdateProfileImage(loginUser, imageUri.getPath(), newOnCompleteListener());
     }
 

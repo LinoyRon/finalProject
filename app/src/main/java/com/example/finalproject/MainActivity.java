@@ -99,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 }else{
                     Toast.makeText(MainActivity.this,task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                 }
+                myProgressBar.setVisibility(View.GONE);
             }
         });
     }

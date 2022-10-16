@@ -19,4 +19,8 @@
         android:id="@+id/roomsFragment"
         android:name="com.example.finalproject.Fragments.RoomsFragment"
         android:label="RoomsFragment" />
+    <fragment
+        android:id="@+id/calenderFragment"
+        android:name="com.example.finalproject.Fragments.CalenderFragment"
+        android:label="CalenderFragment" />
 </navigation>
